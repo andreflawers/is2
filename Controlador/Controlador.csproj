@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCInventario.cs" />
     <Compile Include="CCMarca.cs" />
     <Compile Include="CCModelo.cs" />
     <Compile Include="CCPresentacion.cs" />

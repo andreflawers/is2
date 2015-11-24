@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CECategoria.cs" />
+    <Compile Include="CEInventario.cs" />
     <Compile Include="CEMarca.cs" />
     <Compile Include="CEModelo.cs" />
     <Compile Include="CEPresentacion.cs" />

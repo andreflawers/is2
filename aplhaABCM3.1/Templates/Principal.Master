@@ -61,7 +61,7 @@
                             <li><a href="#" class="text-side">Mostrar</a></li>
                             <li><a href="#" class="text-side">Compras </a></li>
                             <li role="separator" class="divider-sidebar"></li>
-                            <li><a href="#" class="text-side">Tesorería</a></li>
+                            <li><a href="WebForm1.aspx" class="text-side">Inventario</a></li>
                             <li role="separator" class="divider-sidebar"></li>
                             <li><a href="#" class="text-side">Administración</a></li>
 
