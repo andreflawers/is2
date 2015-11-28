@@ -44,6 +44,7 @@
     <Compile Include="CEMarca.cs" />
     <Compile Include="CEModelo.cs" />
     <Compile Include="CEPresentacion.cs" />
+    <Compile Include="CEProducto.cs" />
     <Compile Include="CESubFamilia.cs" />
     <Compile Include="CEUnidad_Medida.cs" />
     <Compile Include="CEUser.cs" />
