@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
 
@@ -39,7 +39,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
@@ -60,7 +60,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
@@ -81,7 +81,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
@@ -103,7 +103,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
@@ -124,7 +124,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -145,7 +145,7 @@ namespace Modelo
         }
         public bool getTipoProducto_insertar(Entidad.TipoDeProducto oFamilia)
         {
-            CDConexion ocd = new CDConexion();
+            CDConnection ocd = new CDConnection();
             SqlConnection oconexion = ocd.openDB();
             SqlCommand oSqlCommand = new SqlCommand("sp_insertar_tipoproducto", oconexion);
             oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -169,7 +169,7 @@ namespace Modelo
         }
         public bool actualizartipoproducto(Entidad.TipoDeProducto oFamilia)
         {
-            CDConexion ocd = new CDConexion();
+            CDConnection ocd = new CDConnection();
             SqlConnection oconexion = ocd.openDB();
             SqlCommand oSqlCommand = new SqlCommand("sp_actualizar_tipoproducto", oconexion);
             oSqlCommand.CommandType = CommandType.StoredProcedure;

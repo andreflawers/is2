@@ -19,7 +19,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 
@@ -39,7 +39,7 @@ namespace Modelo
         //{
           //  try
             //{
-              //  CDConexion oCD = new CDConexion();
+              //  CDConnection oCD = new CDConnection();
                 //SqlConnection oSqlConnection = oCD.openDB();
                 //SqlCommand SqlCommand = new SqlCommand("sp_insertar_categoria", oSqlConnection);
                 //SqlCommand.CommandType = CommandType.StoredProcedure;
@@ -64,7 +64,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -85,7 +85,7 @@ namespace Modelo
         }
        public bool getFamilia_insertar(Entidad.Familia oFamilia)
        {
-         CDConexion ocd = new CDConexion();
+         CDConnection ocd = new CDConnection();
        SqlConnection oconexion = ocd.openDB();
          SqlCommand oSqlCommand = new SqlCommand("sp_insertar_categoria", oconexion);
          oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -108,7 +108,7 @@ namespace Modelo
         public bool getFamilia_actualizar (Entidad.Familia ofamilia)
         {
 
-            CDConexion ocd = new CDConexion();
+            CDConnection ocd = new CDConnection();
             SqlConnection oconexion = ocd.openDB();
             SqlCommand oSqlCommand = new SqlCommand("sp_actualizar_categoria", oconexion);
             oSqlCommand.CommandType = CommandType.StoredProcedure;
@@ -128,7 +128,7 @@ namespace Modelo
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConexion oCDConnection = new CDConexion();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
                 oSqlCommand.CommandType = CommandType.StoredProcedure;
