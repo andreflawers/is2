@@ -58,9 +58,9 @@ namespace aplhaABCM3._1.Pages
             CCInventario oCCInventario = new  CCInventario();
             CEInventario oEntidad = new CEInventario();
             //y aqui el de oinventariotipode inventario y lomismo
-            oEntidad.tipo_Inventario = dpdl_inv.Text;
+            oEntidad.tipo_Inventario = dpdl_inv.SelectedValue;
             //oinventario.almacen = aqui pones el dropdown list almaceny e pones .Text alfinal
-            oEntidad.almacen = dpdl_alm.Text;           
+            oEntidad.almacen = dpdl_alm.SelectedValue;           
             DataTable oDt = oCCInventario.getinventarioGriewList(oEntidad);
 
             Gdv_inv.DataSource = oDt;

@@ -222,11 +222,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Pages\directorio.aspx" />
+    <Content Include="Pages\Familia.aspx" />
     <Content Include="Pages\FomMarca.aspx" />
     <Content Include="Pages\FormModelo.aspx" />
     <Content Include="Pages\FormUnidad_Medida.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Mostrar.aspx" />
+    <Content Include="Pages\SubFamilia.aspx" />
+    <Content Include="Pages\TipoDeProducto.aspx" />
     <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -343,6 +346,12 @@
     <Compile Include="Pages\directorio.aspx.designer.cs">
       <DependentUpon>directorio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Familia.aspx.cs">
+      <DependentUpon>Familia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Familia.aspx.designer.cs">
+      <DependentUpon>Familia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FomMarca.aspx.cs">
       <DependentUpon>FomMarca.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -377,6 +386,18 @@
     </Compile>
     <Compile Include="Pages\Mostrar.aspx.designer.cs">
       <DependentUpon>Mostrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubFamilia.aspx.cs">
+      <DependentUpon>SubFamilia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SubFamilia.aspx.designer.cs">
+      <DependentUpon>SubFamilia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TipoDeProducto.aspx.cs">
+      <DependentUpon>TipoDeProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TipoDeProducto.aspx.designer.cs">
+      <DependentUpon>TipoDeProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

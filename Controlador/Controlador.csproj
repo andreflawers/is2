@@ -39,11 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCFamilia.cs" />
     <Compile Include="CCInventario.cs" />
     <Compile Include="CCMarca.cs" />
     <Compile Include="CCModelo.cs" />
     <Compile Include="CCPresentacion.cs" />
     <Compile Include="CCSubFamilia.cs" />
+    <Compile Include="CCTipoDeProducto.cs" />
     <Compile Include="CCUnidad_Medida.cs" />
     <Compile Include="CCUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

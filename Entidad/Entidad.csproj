@@ -47,8 +47,10 @@
     <Compile Include="CESubFamilia.cs" />
     <Compile Include="CEUnidad_Medida.cs" />
     <Compile Include="CEUser.cs" />
+    <Compile Include="CEFamilia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result_transaccion.cs" />
+    <Compile Include="CETipoDeProducto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
