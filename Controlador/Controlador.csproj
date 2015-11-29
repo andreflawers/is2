@@ -44,6 +44,7 @@
     <Compile Include="CCMarca.cs" />
     <Compile Include="CCModelo.cs" />
     <Compile Include="CCPresentacion.cs" />
+    <Compile Include="CCProducto.cs" />
     <Compile Include="CCSubFamilia.cs" />
     <Compile Include="CCTipoDeProducto.cs" />
     <Compile Include="CCUnidad_Medida.cs" />
