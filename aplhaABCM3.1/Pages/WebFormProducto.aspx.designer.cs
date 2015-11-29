@@ -13,15 +13,6 @@ namespace aplhaABCM3._1.Pages {
     public partial class WebFormProducto {
         
         /// <summary>
-        /// Control btn_BusquedadAvanzada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_BusquedadAvanzada;
-        
-        /// <summary>
         /// Control panelBusAvanzada.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace aplhaABCM3._1.Pages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelBusAvanzada;
+        
+        /// <summary>
+        /// Control btn_BusquedadAvanzada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_BusquedadAvanzada;
         
         /// <summary>
         /// Control btn_buscar.
@@ -40,13 +40,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button btn_buscar;
         
         /// <summary>
-        /// Control TextBoxbuscarid.
+        /// Control txtbuscarid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxbuscarid;
+        protected global::System.Web.UI.WebControls.TextBox txtbuscarid;
         
         /// <summary>
         /// Control txtbuscardescripcion.
