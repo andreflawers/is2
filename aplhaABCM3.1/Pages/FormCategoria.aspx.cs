@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace aplhaABCM3._1.Pages
 {
-    public partial class FormModelo : System.Web.UI.Page
+    public partial class FormCategoria : System.Web.UI.Page
     {
         private string Modo_Edicion
         {
@@ -28,17 +28,17 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
-            Panel_mant_modelo.Visible = false;
+            Panel_mant_cate.Visible = false;
         }
         private void llenarGrillaConProcedimiento()
         {
-            CCModelo oCCModelo = new CCModelo();
-            DataTable oDt = oCCModelo.getmodeloAll();
+            CCCategoria oCCCategoria = new CCCategoria();
+            DataTable oDt = oCCCategoria.getcategoriaAll();
 
             if (oDt.Rows.Count > 0)
             {
-                this.grd_modelo.DataSource = oDt;
-                this.grd_modelo.DataBind();
+                this.grd_cate.DataSource = oDt;
+                this.grd_cate.DataBind();
             }
             else
             {
@@ -51,28 +51,28 @@ namespace aplhaABCM3._1.Pages
             LinkButton lnk = (LinkButton)sender;
             string codigo = lnk.CommandArgument;
             Result_transaccion obj_transac = new Result_transaccion();
-            CEModelo obj_modelo = CCModelo.Modelo_Consultar_datos(obj_transac, codigo);
+            CECategoria obj_cate = CCCategoria.Categoria_Consultar_datos(obj_transac, codigo);
             if (obj_transac.resultado == 1)
             {
-                lbl_titulo.Text = "Consultando datos del modelo";
-                txt_id_empresa.Text = obj_modelo.id_empresa + "";
-                lbl_cod_modelo.Text = obj_modelo.cod_modelo;
-                txt_txt_abrv.Text = obj_modelo.txt_abrv;
-                txt_txt_desc.Text = obj_modelo.txt_desc;
+                lbl_titulo.Text = "Consultando datos de la categoria";
+                txt_id_empresa.Text = obj_cate.id_empresa + "";
+                lbl_cod_cate.Text = obj_cate.cod_cate;
+                txt_txt_abrv.Text = obj_cate.txt_abrv;
+                txt_txt_desc.Text = obj_cate.txt_desc;
                 lbl_confirmacion.Text = "";
                 this.Modo_Edicion = "E";
             }
             else
             {
                 txt_id_empresa.Text = "";
-                lbl_cod_modelo.Text = "";
+                lbl_cod_cate.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
 
-            Panel_mant_modelo.Visible = true;
+            Panel_mant_cate.Visible = true;
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace aplhaABCM3._1.Pages
             string codigo = lkb.CommandArgument;
 
             Result_transaccion obj_transac = new Result_transaccion();
-            CCModelo.Modelo_Eliminar(obj_transac, codigo);
+            CCCategoria.Categoria_Eliminar(obj_transac, codigo);
             if (obj_transac.resultado == 1)
             {
                 llenarGrillaConProcedimiento();
@@ -93,31 +93,31 @@ namespace aplhaABCM3._1.Pages
             }
         }
 
-        protected void lkb_nueva_modelo_Click(object sender, EventArgs e)
+        protected void lkb_nueva_categoria_Click(object sender, EventArgs e)
         {
-            lbl_titulo.Text = "Registrando datos del modelo";
+            lbl_titulo.Text = "Registrando datos de la categoria";
             txt_id_empresa.Text = "";
-            lbl_cod_modelo.Text = "";
+            lbl_cod_cate.Text = "";
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             this.Modo_Edicion = "N";
-            Panel_mant_modelo.Visible = true;
+            Panel_mant_cate.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
             Result_transaccion obj_transac = new Result_transaccion();
-            CEModelo obj_modelo = new CEModelo();
-            obj_modelo.id_empresa = int.Parse(txt_id_empresa.Text);
-            obj_modelo.cod_modelo = lbl_cod_modelo.Text;
-            obj_modelo.txt_abrv = txt_txt_abrv.Text;
-            obj_modelo.txt_desc = txt_txt_desc.Text;
-            CCModelo.Modelo_Grabar(Modo_Edicion, obj_modelo, obj_transac);
+            CECategoria obj_cate = new CECategoria();
+            obj_cate.id_empresa = int.Parse(txt_id_empresa.Text);
+            obj_cate.cod_cate = lbl_cod_cate.Text;
+            obj_cate.txt_abrv = txt_txt_abrv.Text;
+            obj_cate.txt_desc = txt_txt_desc.Text;
+            CCCategoria.Categoria_Grabar(Modo_Edicion, obj_cate, obj_transac);
             if (obj_transac.resultado == 1)
             {
                 if (this.Modo_Edicion == "N")
                 {
-                    lbl_cod_modelo.Text = obj_modelo.cod_modelo;
+                    lbl_cod_cate.Text = obj_cate.cod_cate;
                     this.Modo_Edicion = "E";
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
@@ -134,7 +134,7 @@ namespace aplhaABCM3._1.Pages
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Panel_mant_modelo.Visible = false;
+            Panel_mant_cate.Visible = false;
         }
     }
 }

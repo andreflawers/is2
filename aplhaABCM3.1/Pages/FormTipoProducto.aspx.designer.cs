@@ -10,7 +10,7 @@
 namespace aplhaABCM3._1.Pages {
     
     
-    public partial class directorio {
+    public partial class FormTipoProducto {
         
         /// <summary>
         /// Control lbl_mesg_01.
@@ -22,22 +22,22 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
         
         /// <summary>
-        /// Control lkb_nuevo_producto.
+        /// Control lkb_nuevo_tipo_producto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_nuevo_producto;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_nuevo_tipo_producto;
         
         /// <summary>
-        /// Control Panel_mant_producto.
+        /// Control Panel_mant_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_mant_producto;
+        protected global::System.Web.UI.WebControls.Panel Panel_mant_tipo;
         
         /// <summary>
         /// Control lbl_titulo.
@@ -49,112 +49,58 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_titulo;
         
         /// <summary>
-        /// Control drpCategoria.
+        /// Control txt_id_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
+        protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
         
         /// <summary>
-        /// Control btnCate.
+        /// Control drp_cate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCate;
+        protected global::System.Web.UI.WebControls.DropDownList drp_cate;
         
         /// <summary>
-        /// Control drpMarca.
+        /// Control drp_clase.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpMarca;
+        protected global::System.Web.UI.WebControls.DropDownList drp_clase;
         
         /// <summary>
-        /// Control btnMarca.
+        /// Control lbl_cod_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMarca;
+        protected global::System.Web.UI.WebControls.Label lbl_cod_tipo;
         
         /// <summary>
-        /// Control drpClase.
+        /// Control txt_txt_abrv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpClase;
+        protected global::System.Web.UI.WebControls.TextBox txt_txt_abrv;
         
         /// <summary>
-        /// Control btnClase.
+        /// Control txt_txt_desc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClase;
-        
-        /// <summary>
-        /// Control drpModelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpModelo;
-        
-        /// <summary>
-        /// Control btnModelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModelo;
-        
-        /// <summary>
-        /// Control drpTipoProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpTipoProducto;
-        
-        /// <summary>
-        /// Control btnTipoProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTipoProducto;
-        
-        /// <summary>
-        /// Control drpUnidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpUnidad;
-        
-        /// <summary>
-        /// Control btnUnidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUnidad;
+        protected global::System.Web.UI.WebControls.TextBox txt_txt_desc;
         
         /// <summary>
         /// Control lbl_confirmacion.
@@ -184,12 +130,12 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
         
         /// <summary>
-        /// Control grd_producto.
+        /// Control grd_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grd_producto;
+        protected global::System.Web.UI.WebControls.GridView grd_tipo;
     }
 }

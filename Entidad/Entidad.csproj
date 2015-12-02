@@ -39,11 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CEProducto.cs" />
     <Compile Include="CECategoria.cs" />
+    <Compile Include="CEClase.cs" />
     <Compile Include="CEMarca.cs" />
     <Compile Include="CEModelo.cs" />
-    <Compile Include="CEPresentacion.cs" />
-    <Compile Include="CESubFamilia.cs" />
+    <Compile Include="CETipoProducto.cs" />
     <Compile Include="CEUnidad_Medida.cs" />
     <Compile Include="CEUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

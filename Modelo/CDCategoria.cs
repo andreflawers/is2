@@ -11,133 +11,102 @@ namespace Modelo
 {
     public class CDCategoria
     {
-        string error = "";
-        public DataTable getCategorialistar()
+        public static CECategoria Categoria_Consultar_datos(SqlConnection conn, string m_cod_cate)
+        {
+            CECategoria obj_cate = new CECategoria();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_categoria_detalle", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@cod_cate", SqlDbType.Char, 3).Value = m_cod_cate;
+                    SqlDataReader dr_reesult = cmd.ExecuteReader();
+                    if (dr_reesult.HasRows)
+                    {
+                        dr_reesult.Read();
+                        obj_cate.id_empresa = int.Parse(dr_reesult["id_empresa"].ToString());
+                        obj_cate.cod_cate = dr_reesult["cod_cate"].ToString();
+                        obj_cate.txt_abrv = dr_reesult["txt_abrv"].ToString();
+                        obj_cate.txt_desc = dr_reesult["txt_desc"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return obj_cate;
+        }
+        public static void Categoria_Insertar(SqlConnection conn, CECategoria obj_cate)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_categoria_Insert", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_empresa", SqlDbType.BigInt).Value = obj_cate.id_empresa;
+                    cmd.Parameters.Add("@cod_cate", SqlDbType.VarChar, 3).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@txt_abrv", SqlDbType.VarChar, 10).Value = obj_cate.txt_abrv;
+                    cmd.Parameters.Add("@txt_desc", SqlDbType.VarChar, 50).Value = obj_cate.txt_desc;
+                    cmd.ExecuteNonQuery();
+
+                    obj_cate.cod_cate = cmd.Parameters["@cod_cate"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void Categoria_Actualizar(SqlConnection conn, CECategoria obj_cate)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_categoria_Update", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_empresa", SqlDbType.BigInt).Value = obj_cate.id_empresa;
+                    cmd.Parameters.Add("@cod_cate", SqlDbType.VarChar, 3).Value = obj_cate.cod_cate;
+                    cmd.Parameters.Add("@txt_abrv", SqlDbType.VarChar, 10).Value = obj_cate.txt_abrv;
+                    cmd.Parameters.Add("@txt_desc", SqlDbType.VarChar, 50).Value = obj_cate.txt_desc;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void Categoria_Eliminar(SqlConnection conn, string m_cod_cate)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_categoria_Delete", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@cod_cate", SqlDbType.VarChar, 3).Value = m_cod_cate;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable getCategoriaAll()
         {
 
-            String procedure = "sp_listar_categoria";
+            String procedure = "usp_categoria_Listar";
             try
             {
                 SqlConnection oSqlConnection = new SqlConnection();
-                CDConnection  oCDConnection = new CDConnection ();
+                CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
-
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
                 DataTable oDataTable = new DataTable();
                 oSqlDataAdapter.Fill(oDataTable);
-                return oDataTable;
-
-            }
-            catch (Exception e)
-            {
-                e.ToString();
-                return null;
-            }
-        }
-        //public DataTable insertar(Categoria oCategoria)
-        //{
-        //  try
-        //{
-        //  CDConnection  oCD = new CDConnection ();
-        //SqlConnection oSqlConnection = oCD.openDB();
-        //SqlCommand SqlCommand = new SqlCommand("sp_insertar_categoria", oSqlConnection);
-        //SqlCommand.CommandType = CommandType.StoredProcedure;
-        //SqlCommand.Parameters.Add("@id_Categoria", SqlDbType.Char, 3).Value = oCategoria.Id_Categoria;
-        //SqlCommand.Parameters.Add("@Nombre", SqlDbType.Char, 50).Value = oCategoria.Nombre;                   
-        //oSqlConnection.Open();
-        //SqlCommand.ExecuteNonQuery();
-        //oSqlConnection.Close();
-        //}
-        //atch (System.Exception ex)
-        //{
-        // error = "Error: " + ex.Message;
-        // }
-        //return error;  
-
-        //        }
-
-        public DataTable Buscar(string Nombre)
-        {
-
-            String procedure = "sp_buscar_Categoria";
-            try
-            {
-                SqlConnection oSqlConnection = new SqlConnection();
-                CDConnection  oCDConnection = new CDConnection ();
-                oSqlConnection = oCDConnection.openDB();
-                SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
-                oSqlCommand.CommandType = CommandType.StoredProcedure;
-                oSqlCommand.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = Nombre;
-                oSqlCommand.ExecuteNonQuery();
-                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
-                DataTable oDataTable = new DataTable();
-                oSqlDataAdapter.Fill(oDataTable);
-                return oDataTable;
-
-            }
-            catch (Exception e)
-            {
-                e.ToString();
-                return null;
-            }
-
-        }
-        public bool getCategoria_insertar(CECategoria oCategoria)
-        {
-            CDConnection  ocd = new CDConnection ();
-            SqlConnection oconexion = ocd.openDB();
-            SqlCommand oSqlCommand = new SqlCommand("sp_insertar_categoria", oconexion);
-            oSqlCommand.CommandType = CommandType.StoredProcedure;
-            oSqlCommand.Parameters.Add("@id_empresa", SqlDbType.Int).Value = oCategoria.id_Empresa;
-            oSqlCommand.Parameters.Add("@cod_iso", SqlDbType.VarChar, 2).Value = oCategoria.cod_iso_idio;
-            oSqlCommand.Parameters.Add("@codigo", SqlDbType.VarChar, 3).Value = oCategoria.Id_Categoria;
-            oSqlCommand.Parameters.Add("@abrv", SqlDbType.VarChar, 10).Value = oCategoria.Nombre;
-            oSqlCommand.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = oCategoria.descripcion;
-            try
-            {
-                oSqlCommand.ExecuteNonQuery();
-                oconexion.Close();
-                return true;
-            }
-            catch (System.Exception ex)
-            {
-                return false;
-            }
-        }
-        public bool getCategoria_actualizar(CECategoria oCategoria)
-        {
-
-            CDConnection  ocd = new CDConnection ();
-            SqlConnection oconexion = ocd.openDB();
-            SqlCommand oSqlCommand = new SqlCommand("sp_actualizar_categoria", oconexion);
-            oSqlCommand.CommandType = CommandType.StoredProcedure;
-            oSqlCommand.Parameters.Add("@id_Empresa", SqlDbType.Int).Value = oCategoria.id_Empresa;
-            oSqlCommand.Parameters.Add("@cod_iso_idio", SqlDbType.VarChar, 2).Value = oCategoria.cod_iso_idio;
-            oSqlCommand.Parameters.Add("@cod_cat", SqlDbType.VarChar, 3).Value = oCategoria.Id_Categoria;
-            oSqlCommand.Parameters.Add("@abrv", SqlDbType.VarChar, 10).Value = oCategoria.Nombre;
-            oSqlCommand.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = oCategoria.descripcion;
-            oSqlCommand.ExecuteNonQuery();
-            oconexion.Close();
-            return true;
-
-        }
-        public DataTable getFammilia_eliminar(string Id_Categoria)
-        {
-            string procedure = "sp_eliminar_categoria";
-            try
-            {
-                SqlConnection oSqlConnection = new SqlConnection();
-                CDConnection  oCDConnection = new CDConnection ();
-                oSqlConnection = oCDConnection.openDB();
-                SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
-                oSqlCommand.CommandType = CommandType.StoredProcedure;
-                oSqlCommand.Parameters.Add("@cod_cate", SqlDbType.VarChar, 3).Value = Id_Categoria;
-                //oSqlCommand.ExecuteNonQuery();
-                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
-                DataTable oDataTable = new DataTable();
-                oSqlDataAdapter.Fill(oDataTable);
-
                 return oDataTable;
 
             }

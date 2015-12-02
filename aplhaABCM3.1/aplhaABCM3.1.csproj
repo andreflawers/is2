@@ -223,7 +223,10 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Pages\directorio.aspx" />
     <Content Include="Pages\FomMarca.aspx" />
+    <Content Include="Pages\FormCategoria.aspx" />
+    <Content Include="Pages\FormClase.aspx" />
     <Content Include="Pages\FormModelo.aspx" />
+    <Content Include="Pages\FormTipoProducto.aspx" />
     <Content Include="Pages\FormUnidad_Medida.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Mostrar.aspx" />
@@ -349,12 +352,33 @@
     <Compile Include="Pages\FomMarca.aspx.designer.cs">
       <DependentUpon>FomMarca.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FormCategoria.aspx.cs">
+      <DependentUpon>FormCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormCategoria.aspx.designer.cs">
+      <DependentUpon>FormCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormClase.aspx.cs">
+      <DependentUpon>FormClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormClase.aspx.designer.cs">
+      <DependentUpon>FormClase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FormModelo.aspx.cs">
       <DependentUpon>FormModelo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\FormModelo.aspx.designer.cs">
       <DependentUpon>FormModelo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormTipoProducto.aspx.cs">
+      <DependentUpon>FormTipoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormTipoProducto.aspx.designer.cs">
+      <DependentUpon>FormTipoProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FormUnidad_Medida.aspx.cs">
       <DependentUpon>FormUnidad_Medida.aspx</DependentUpon>

@@ -6,17 +6,17 @@ using System.Data.SqlClient;
 
 namespace Controlador
 {
-    public class CCModelo
+    public class CCClase
     {
-        public static CEModelo Modelo_Consultar_datos(Result_transaccion obj_transac, string m_cod_modelo)
+        public static CEClase Clase_Consultar_datos(Result_transaccion obj_transac, string m_cod_clase)
         {
-            CEModelo obj_modelo = new CEModelo();
+            CEClase obj_clase = new CEClase();
             SqlConnection conn = null;
 
             try
             {
                 conn = new CDConnection().openDB();
-                obj_modelo = CDModelo.Modelo_Consultar_datos(conn, m_cod_modelo);
+                obj_clase = CDClase.Clase_Consultar_datos(conn, m_cod_clase);
 
                 obj_transac.resultado = 1;
                 obj_transac.msg_error = "";
@@ -24,16 +24,16 @@ namespace Controlador
             catch (Exception ex)
             {
                 obj_transac.resultado = 0;
-                obj_transac.msg_error = "Error!!! No se pudo consultar los datos del modelo" + ex.Message;
+                obj_transac.msg_error = "Error!!! No se pudo consultar los datos de la clase" + ex.Message;
             }
             finally
             {
                 CDConnection.CloseConexion(conn);
             }
 
-            return obj_modelo;
+            return obj_clase;
         }
-        public static void Modelo_Grabar(string Accion, CEModelo obj_modelo, Result_transaccion obj_transac)
+        public static void Clase_Grabar(string Accion, CEClase obj_clase, Result_transaccion obj_transac)
         {
             SqlConnection conn = null;
 
@@ -42,15 +42,15 @@ namespace Controlador
                 conn = new CDConnection().openDB();
                 if (Accion == "N")
                 {
-                    CDModelo.Modelo_Insertar(conn, obj_modelo);
+                    CDClase.Clase_Insertar(conn, obj_clase);
                 }
                 else
                 {
-                    CDModelo.Modelo_Actualizar(conn, obj_modelo);
+                    CDClase.Clase_Actualizar(conn, obj_clase);
                 }
 
                 obj_transac.resultado = 1;
-                obj_transac.new_codigo = obj_modelo.cod_modelo;
+                obj_transac.new_codigo = obj_clase.cod_clase;
                 obj_transac.msg_error = "";
             }
             catch (Exception ex)
@@ -63,14 +63,14 @@ namespace Controlador
                 CDConnection.CloseConexion(conn);
             }
         }
-        public static void Modelo_Eliminar(Result_transaccion obj_transac, string m_cod_modelo)
+        public static void Clase_Eliminar(Result_transaccion obj_transac, string m_cod_clase)
         {
             SqlConnection conn = null;
 
             try
             {
                 conn = new CDConnection().openDB();
-                CDModelo.Modelo_Eliminar(conn, m_cod_modelo);
+                CDClase.Clase_Eliminar(conn, m_cod_clase);
 
                 obj_transac.resultado = 1;
                 obj_transac.msg_error = "";
@@ -85,10 +85,10 @@ namespace Controlador
                 CDConnection.CloseConexion(conn);
             }
         }
-        public DataTable getmodeloAll()
+        public DataTable getclaseAll()
         {
-            CDModelo oCDModelo = new CDModelo();
-            return oCDModelo.getModeloAll();
+            CDClase oCDClase = new CDClase();
+            return oCDClase.getClaseAll();
         }
     }
 }

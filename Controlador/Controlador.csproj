@@ -39,10 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCCategoria.cs" />
+    <Compile Include="CCClase.cs" />
     <Compile Include="CCMarca.cs" />
     <Compile Include="CCModelo.cs" />
-    <Compile Include="CCPresentacion.cs" />
-    <Compile Include="CCSubFamilia.cs" />
+    <Compile Include="CCProducto.cs" />
+    <Compile Include="CCTipoProducto.cs" />
     <Compile Include="CCUnidad_Medida.cs" />
     <Compile Include="CCUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
