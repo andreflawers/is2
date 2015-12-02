@@ -352,6 +352,7 @@
     </Compile>
     <Compile Include="Pages\Familia.aspx.cs">
       <DependentUpon>Familia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Familia.aspx.designer.cs">
       <DependentUpon>Familia.aspx</DependentUpon>
@@ -414,12 +415,14 @@
     </Compile>
     <Compile Include="Pages\SubFamilia.aspx.cs">
       <DependentUpon>SubFamilia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\SubFamilia.aspx.designer.cs">
       <DependentUpon>SubFamilia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TipoDeProducto.aspx.cs">
       <DependentUpon>TipoDeProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\TipoDeProducto.aspx.designer.cs">
       <DependentUpon>TipoDeProducto.aspx</DependentUpon>
