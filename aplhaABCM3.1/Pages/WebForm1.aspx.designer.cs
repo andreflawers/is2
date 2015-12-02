@@ -7,45 +7,54 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace aplhaABCM3._1.Templates {
+namespace aplhaABCM3._1.Pages {
     
     
-    public partial class Principal {
+    public partial class WebForm1 {
         
         /// <summary>
-        /// Control head.
+        /// Control dpdl_inv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_inv;
         
         /// <summary>
-        /// Control form2.
+        /// Control dpdl_alm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_alm;
         
         /// <summary>
-        /// Control lblUser.
+        /// Control btn_Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUser;
+        protected global::System.Web.UI.WebControls.Button btn_Aceptar;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control LblMensajeError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label LblMensajeError;
+        
+        /// <summary>
+        /// Control Gdv_inv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Gdv_inv;
     }
 }
