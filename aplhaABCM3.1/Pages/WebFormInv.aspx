@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Templates/Principal.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="aplhaABCM3._1.Pages.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Templates/Principal.Master" AutoEventWireup="true" CodeBehind="WebFormInv.aspx.cs" Inherits="aplhaABCM3._1.Pages.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,13 +22,15 @@
             <asp:Label ID="LblMensajeError" runat="server" Text=""></asp:Label>
             </td></tr>
         <tr>
-            <%--<asp:GridView ID="Gdv_inv" runat="server" AutoGenerateColumns="False" AllowPaging="true">
-                <Columns>
-                    <asp:TemplateField HeaderText="Producto"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Cantidad"></asp:TemplateField>
+           <asp:GridView ID="Gdv_inv" runat="server" AutoGenerateColumns="False" AllowPaging="True">
+                <Columns>          
+                    
+                    <%--<asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="stock" HeaderText="Stock" />
+                    --%>                    
                 </Columns>
-            </asp:GridView>--%>
-           <td><asp:GridView ID="Gdv_inv" runat="server"  AutoGenerateColumns="False" AllowPaging="true"></asp:GridView></td> 
+            </asp:GridView>
+           
         </tr>
     </table>
 </asp:Content>

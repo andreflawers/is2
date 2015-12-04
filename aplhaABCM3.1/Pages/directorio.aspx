@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:LinkButton ID="lkb_nuevo_producto" runat="server" OnClick="lkb_nuevo_producto_Click" >Registrar nuevo producto</asp:LinkButton>
+             <%--   <asp:LinkButton ID="lkb_nuevo_producto" runat="server" OnClick="lkb_nuevo_producto_Click" >Registrar nuevo producto</asp:LinkButton>--%>
             </td>
         </tr>
         <tr>

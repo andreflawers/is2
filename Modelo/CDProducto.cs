@@ -118,20 +118,7 @@ namespace Modelo
                 return null;
             }
         }
-    }
-}
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modelo
-{
-   public class CDProducto
-    {
+     
        public DataTable getProductolistar()
        {
            String procedure = "usp_Producto_Listar";

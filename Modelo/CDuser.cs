@@ -23,7 +23,7 @@ namespace Modelo
                 SqlCommand oSqlCommand = oSqlConnection.CreateCommand();
                 oSqlCommand.CommandText = procedure;
                 oSqlCommand.CommandType = CommandType.StoredProcedure;
-                oSqlCommand.Parameters.Add("@id_Usuario",SqlDbType.VarChar,25).Value=oCEUser.id_usuario;
+                oSqlCommand.Parameters.Add("@id",SqlDbType.VarChar,25).Value=oCEUser.id_usuario;
                 oSqlCommand.Parameters.Add("@clave", SqlDbType.VarChar, 25).Value = oCEUser.clave;
                 SqlDataReader oSqlDataReader= oSqlCommand.ExecuteReader();
                 if (oSqlDataReader.HasRows)

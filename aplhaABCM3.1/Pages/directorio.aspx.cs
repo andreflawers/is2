@@ -27,10 +27,10 @@ namespace aplhaABCM3._1.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack) return;
-            llenarGrillaConProcedimiento();
+            //llenarGrillaConProcedimiento();
             Panel_mant_producto.Visible = false;
         }
-        private void llenarGrillaConProcedimiento()
+        /*private void llenarGrillaConProcedimiento()
         {
             CCProducto oCCProducto = new CCProducto();
             DataTable oDt = oCCProducto.getproductoAll();
@@ -99,7 +99,7 @@ namespace aplhaABCM3._1.Pages
             drpTipoProducto.DataTextField = "txt_desc";
             drpTipoProducto.DataValueField = "cod_tipo";
             drpTipoProducto.DataBind();
-        }
+        }*/
 
         protected void btnMarca_Click(object sender, EventArgs e)
         {
@@ -127,7 +127,7 @@ namespace aplhaABCM3._1.Pages
             Response.Redirect("~/Pages/FormTipoProducto.aspx");
         }
 
-        protected void lkb_nuevo_producto_Click(object sender, EventArgs e)
+        /*protected void lkb_nuevo_producto_Click(object sender, EventArgs e)
         {
             lbl_titulo.Text = "Registrando datos del producto";
             fillDropDownListMarca();
@@ -138,11 +138,11 @@ namespace aplhaABCM3._1.Pages
             fillDropDownListTipoProducto();
             this.Modo_Edicion = "N";
             Panel_mant_producto.Visible = true;
-        }
+        }*/
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
-            Result_transaccion obj_transac = new Result_transaccion();
+           /* Result_transaccion obj_transac = new Result_transaccion();
             CEProducto obj_prod = new CEProducto();
             obj_prod.cod_cate = drpCategoria.SelectedValue;
             obj_prod.cod_clase = drpClase.SelectedValue;
@@ -166,17 +166,17 @@ namespace aplhaABCM3._1.Pages
             {
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = "No se pudo grabar la información" + obj_transac.msg_error;
-            }
+            }*/
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Panel_mant_producto.Visible = false;
+            //Panel_mant_producto.Visible = false;
         }
 
         protected void lkb_editar_Click(object sender, EventArgs e)
         {
-            LinkButton lnk = (LinkButton)sender;
+            /*LinkButton lnk = (LinkButton)sender;
             string codigo = lnk.CommandArgument;
             Result_transaccion obj_transac = new Result_transaccion();
             CEProducto obj_prod = CCProducto.Producto_Consultar_datos(obj_transac, codigo);
@@ -203,12 +203,12 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
 
-            Panel_mant_producto.Visible = true;
+            Panel_mant_producto.Visible = true;*/
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
         {
-            LinkButton lkb = (LinkButton)sender;
+            /*LinkButton lkb = (LinkButton)sender;
             string codigo = lkb.CommandArgument;
 
             Result_transaccion obj_transac = new Result_transaccion();
@@ -221,7 +221,7 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 lbl_mesg_01.Text = obj_transac.msg_error;
-            }
+            }*/
         }
     }
 }

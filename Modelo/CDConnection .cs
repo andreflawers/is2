@@ -13,7 +13,7 @@ namespace Modelo
         public SqlConnection openDB()
         {
 
-            string lsConection = "Data Source= JOSE;Initial Catalog = db5Version2;Integrated Security=true;user=sa;password=ktbffh";
+            string lsConection = "Data Source= DESKTOP-UOIACDD;Initial Catalog = db5Version2;Integrated Security=true;user=sa;password=ktbffh";
             SqlConnection oConection = new SqlConnection(lsConection);
             try
             {

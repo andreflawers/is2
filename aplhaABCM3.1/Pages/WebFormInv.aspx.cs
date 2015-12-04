@@ -22,6 +22,7 @@ namespace aplhaABCM3._1.Pages
                 {
                     this.llenarComboinv();
                     this.llenarComboAlm();
+                    llenarGrillaConProcedimiento();
                 }
 
             }
@@ -58,10 +59,11 @@ namespace aplhaABCM3._1.Pages
             CCInventario oCCInventario = new  CCInventario();
             CEInventario oEntidad = new CEInventario();
             //y aqui el de oinventariotipode inventario y lomismo
-            oEntidad.tipo_Inventario = dpdl_inv.SelectedValue;
+            //oEntidad.tipo_Inventario = dpdl_inv.SelectedValue;
             //oinventario.almacen = aqui pones el dropdown list almaceny e pones .Text alfinal
-            oEntidad.almacen = dpdl_alm.SelectedValue;           
-            DataTable oDt = oCCInventario.getinventarioGriewList(oEntidad);
+            //oEntidad.almacen = dpdl_alm.SelectedValue;           
+            DataTable oDt =oCCInventario.getInventarioList();
+                //oCCInventario.getinventarioGriewList(oEntidad);
 
             Gdv_inv.DataSource = oDt;
             Gdv_inv.DataBind();
