@@ -28,7 +28,7 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             //llenarGrillaConProcedimiento();
-            Panel_mant_producto.Visible = false;
+            Panel_mant_producto.Visible = true;
         }
         /*private void llenarGrillaConProcedimiento()
         {
