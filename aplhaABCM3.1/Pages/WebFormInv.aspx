@@ -22,7 +22,7 @@
             <asp:Label ID="LblMensajeError" runat="server" Text=""></asp:Label>
             </td></tr>
         <tr>
-           <asp:GridView ID="Gdv_inv" runat="server" AutoGenerateColumns="False" AllowPaging="True">
+           <asp:GridView ID="Gdv_inv" runat="server" AutoGenerateColumns="True" AllowPaging="True">
                 <Columns>          
                     
                     <%--<asp:BoundField DataField="nombre" HeaderText="Nombre" />

@@ -22,7 +22,7 @@ namespace aplhaABCM3._1.Pages
                 {
                     this.llenarComboinv();
                     this.llenarComboAlm();
-                    llenarGrillaConProcedimiento();
+                    this.llenarGrillaTotal();
                 }
 
             }
@@ -54,37 +54,35 @@ namespace aplhaABCM3._1.Pages
             dpdl_alm.DataBind();
             dpdl_alm.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
-        private void llenarGrillaConProcedimiento()
+        private void llenarGrillaTotal()
         {
             CCInventario oCCInventario = new  CCInventario();
-            CEInventario oEntidad = new CEInventario();
-            //y aqui el de oinventariotipode inventario y lomismo
-            //oEntidad.tipo_Inventario = dpdl_inv.SelectedValue;
-            //oinventario.almacen = aqui pones el dropdown list almaceny e pones .Text alfinal
-            //oEntidad.almacen = dpdl_alm.SelectedValue;           
-            DataTable oDt =oCCInventario.getInventarioList();
-                //oCCInventario.getinventarioGriewList(oEntidad);
-
+            DataTable oDt =oCCInventario.getInvAll();
             Gdv_inv.DataSource = oDt;
             Gdv_inv.DataBind();
-            //if (oDt.Rows.Count > 0)
-            //{
-            //    Gdv_inv.DataSource = oDt;
-            //    Gdv_inv.DataBind();
-            //}
-            //else
-            //{
-            //    LblMensajeError.ForeColor = System.Drawing.Color.Red;
-            //    LblMensajeError.Text = "No existen datos";
-            //}
+                Gdv_inv.DataSource = oDt;
+                Gdv_inv.DataBind();        
 
+        }
+
+        
+
+        private void filtrarGrillaCombos()
+        {
+            CCInventario oCCInventario = new CCInventario();
+            CEInventario oCEInventario = new CEInventario();
+            oCEInventario.tipo_Inventario = dpdl_inv.SelectedItem.Text.Trim();
+            oCEInventario.almacen = dpdl_alm.SelectedItem.Text.Trim();
+            DataTable oDT= oCCInventario.getinventarioGriewList(oCEInventario);
+            Gdv_inv.DataSource = oDT;
+            Gdv_inv.DataBind();
+               
         }
 
         protected void btn_Aceptar_Click(object sender, EventArgs e)
         {
-           
-            llenarGrillaConProcedimiento();
-            Gdv_inv.Visible = true;
+
+            filtrarGrillaCombos();
         }
 
 

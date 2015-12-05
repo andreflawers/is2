@@ -85,6 +85,26 @@ namespace Modelo
 
         }
 
+        public DataTable getAllProducts()
+        {
+            string sp = "sp_inv_all";
+
+            try
+            {
+                SqlConnection oSqlConnection = new SqlConnection();
+                CDConnection oCDConnection = new CDConnection();
+                oSqlConnection = oCDConnection.openDB();
+                SqlCommand oSqlCommand = new SqlCommand(sp, oSqlConnection);
+                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
+                DataTable oDataTable = new DataTable();
+                oSqlDataAdapter.Fill(oDataTable);
+                return oDataTable;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         
     }

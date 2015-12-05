@@ -11,6 +11,11 @@ namespace Controlador
 {
     public class CCInventario
     {
+        public DataTable getInvAll()
+        {
+            CDinventario oCDinventario = new CDinventario();
+            return oCDinventario.getAllProducts();
+        }
         public DataTable getInventarioList()
         {
             CDinventario oCDinventario = new CDinventario();
