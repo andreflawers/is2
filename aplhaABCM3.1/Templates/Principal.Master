@@ -11,7 +11,7 @@
     <link href="../Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form2" runat="server">
+    <form id="form2" runat="server" class="prueba-0">
         <div class="container">
             <nav class="navbar-default navbar-fixed-top">
                 <div style="position: relative">
@@ -44,26 +44,16 @@
                     </div>
                 </div>
             </nav>
-            <div style="position: relative">
+            <div style="overflow:hidden" class="">
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-sidebar">
                             <li role="separator" class="divider-sidebar"></li>
-                            <li><a href="../Pages/WebFormProducto.aspx" class="text-side">Producto</a></li>
-                            <li><a href="#" class="text-side">Almacén</a>
-                                  <ul class=" nav collapse">
-                                      <li><a href="#" class="text-side">content</a></li>
-                                      <li><a href="#" class="text-side">content</a></li>
-                                      <li><a href="#" class="text-side">content</a></li>
-                                  </ul>
-                            </li>
-                            <li role="separator" class="divider-sidebar"></li>
-                            <li><a href="#" class="text-side">Mostrar</a></li>
-                            <li><a href="#" class="text-side">Compras </a></li>
-                            <li role="separator" class="divider-sidebar"></li>
-                            <li><a href="WebForm1.aspx" class="text-side">Inventario</a></li>
-                            <li role="separator" class="divider-sidebar"></li>
-                            <li><a href="#" class="text-side">Administración</a></li>
+                            <li><a href="../Pages/directorio.aspx" class="text-side">Directorio</a></li>
+                            <li><a href="../Pages/WebFormProducto.aspx" class="text-side">Producto</a></li>                            
+                            <li role="separator" class="divider-sidebar"></li>                         
+                            <li><a href="WebFormInv.aspx" class="text-side">Inventario</a></li>
+                           
 
                         </ul>
                     </div>

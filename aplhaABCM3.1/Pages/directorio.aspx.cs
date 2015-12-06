@@ -28,7 +28,13 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             //llenarGrillaConProcedimiento();
-            Panel_mant_producto.Visible = true;
+            
+            fillDropDownListCategoria();
+            fillDropDownListClase();
+            fillDropDownListTipoProducto();
+            fillDropDownListMarca();
+            fillDropDownListModelo();
+            fillDropDownListUnidadMedida();
         }
         /*private void llenarGrillaConProcedimiento()
         {
@@ -44,7 +50,7 @@ namespace aplhaABCM3._1.Pages
             {
                 this.lbl_mesg_01.Text = "No existen datos";
             }
-        }
+        }*/
         private void fillDropDownListMarca()
         {
             CCMarca oCCMarca = new CCMarca();
@@ -99,7 +105,7 @@ namespace aplhaABCM3._1.Pages
             drpTipoProducto.DataTextField = "txt_desc";
             drpTipoProducto.DataValueField = "cod_tipo";
             drpTipoProducto.DataBind();
-        }*/
+        }
 
         protected void btnMarca_Click(object sender, EventArgs e)
         {
@@ -167,6 +173,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = "No se pudo grabar la información" + obj_transac.msg_error;
             }*/
+            Response.Redirect("../Pages/WebFormProducto.aspx");
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)

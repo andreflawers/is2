@@ -28,6 +28,7 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
+            grd_tipo.HeaderRow.TableSection = TableRowSection.TableHeader;
             Panel_mant_tipo.Visible = false;
         }
         private void llenarGrillaConProcedimiento()
@@ -117,6 +118,8 @@ namespace aplhaABCM3._1.Pages
             string codigo = lnk.CommandArgument;
             Result_transaccion obj_transac = new Result_transaccion();
             CETipoProducto obj_tipo = CCTipoProducto.Tipo_Producto_Consultar_datos(obj_transac, codigo);
+            fillDropDownListCategoria();
+            fillDropDownListClase();
             if (obj_transac.resultado == 1)
             {
                 lbl_titulo.Text = "Consultando datos del tipo de producto";
@@ -132,7 +135,6 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 txt_id_empresa.Text = "";
-                // fillDropDownListCategoria();
                 lbl_cod_tipo.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";

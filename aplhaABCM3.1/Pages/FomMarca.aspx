@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <table width="700px" align="center">
+       <table width="700px" class="left">
         <tr>
             <td align="center">
                 <h1>Lista de Marcas</h1>
@@ -20,44 +20,44 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:Panel ID="Panel_mant_marca" Width="550px" BorderStyle="Solid" BorderWidth="1" runat="server">
+                <asp:Panel ID="Panel_mant_marca" Width="550px" cssClass="panel panel-default" runat="server">
                <table width="100%">
                    <tr>
                        <td align="center">
-                           <asp:Label ID="lbl_titulo" runat="server" Text=""></asp:Label>
+                           <asp:Label ID="lbl_titulo" runat="server" Text="" Font-Size="X-Large"></asp:Label>
                        </td>
                    </tr>
                    <tr>
                        <td>
                            <table width="100%">
                                <tr>
-                                   <td>Código de la empresa:</td>
+                                   <td><h5 class="text-right">Código de la empresa : </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_id_empresa" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_id_empresa" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>codigo idioma:</td>
+                                   <td><h5 class="text-right">Código de idioma : </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_cod_idio" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_cod_idio" Width="200px" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                               <tr>
-                                   <td>Codigo de marca:</td>
+                                   <td><h5 class="text-right">Código Marca : </h5></td>
                                    <td>
                                        <asp:Label ID="lbl_cod_marca" runat="server" Text=""></asp:Label>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>Abreviatura:</td>
+                                   <td><h5 class="text-right">Abreviatura : </h5>:</td>
                                    <td>
-                                       <asp:TextBox ID="txt_txt_abrv" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_txt_abrv" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>descripcion:</td>
+                                   <td><h5 class="text-right">Descripción </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_txt_desc" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_txt_desc" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                            </table>
@@ -83,7 +83,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="grd_marca" Width="100%" runat="server" AutoGenerateColumns="False" >
+                <asp:GridView ID="grd_marca" Width="100%" runat="server" AutoGenerateColumns="False" GridLines="None" UseAccessibleHeader="true" CssClass="table table-striped">
                     <Columns>
                         <asp:BoundField DataField="cod_marca" HeaderText="Codigo de la Marca" />
                         <asp:BoundField DataField="txt_abrv" HeaderText="Abreviatura" />

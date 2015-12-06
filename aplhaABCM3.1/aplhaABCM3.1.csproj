@@ -229,7 +229,6 @@
     <Content Include="Pages\FormTipoProducto.aspx" />
     <Content Include="Pages\FormUnidad_Medida.aspx" />
     <Content Include="Pages\Login.aspx" />
-    <Content Include="Pages\Mostrar.aspx" />
     <Content Include="Pages\WebFormInv.aspx" />
     <Content Include="Pages\WebFormProducto.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -395,13 +394,6 @@
     </Compile>
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Mostrar.aspx.cs">
-      <DependentUpon>Mostrar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Mostrar.aspx.designer.cs">
-      <DependentUpon>Mostrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\WebFormInv.aspx.cs">
       <DependentUpon>WebFormInv.aspx</DependentUpon>

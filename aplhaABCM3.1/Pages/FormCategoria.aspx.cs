@@ -23,12 +23,16 @@ namespace aplhaABCM3._1.Pages
             {
                 ViewState["Modo_Edicion"] = value;
             }
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack) return;
+            
             llenarGrillaConProcedimiento();
+            grd_cate.HeaderRow.TableSection = TableRowSection.TableHeader;
             Panel_mant_cate.Visible = false;
+            
         }
         private void llenarGrillaConProcedimiento()
         {

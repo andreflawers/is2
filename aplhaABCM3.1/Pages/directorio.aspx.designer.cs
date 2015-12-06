@@ -22,15 +22,6 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
         
         /// <summary>
-        /// Panel_mant_producto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_mant_producto;
-        
-        /// <summary>
         /// lbl_titulo control.
         /// </summary>
         /// <remarks>
@@ -164,15 +155,6 @@ namespace aplhaABCM3._1.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_grabar;
-        
-        /// <summary>
-        /// btn_cancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelar;
         
         /// <summary>
         /// grd_producto control.

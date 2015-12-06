@@ -23,6 +23,7 @@ namespace aplhaABCM3._1.Pages
                     this.llenarComboinv();
                     this.llenarComboAlm();
                     this.llenarGrillaTotal();
+                    Gdv_inv.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
 
             }

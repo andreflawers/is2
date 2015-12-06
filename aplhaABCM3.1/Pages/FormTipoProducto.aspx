@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table width="700px" align="center">
+    <table width="700px" class="left">
         <tr>
             <td align="center">
                 <h1>Lista de Tipo de Productos</h1>
@@ -20,50 +20,50 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:Panel ID="Panel_mant_tipo" Width="550px" BorderStyle="Solid" BorderWidth="1" runat="server">
+                <asp:Panel ID="Panel_mant_tipo" Width="550px" CssClass="panel panel-default" runat="server">
                <table width="100%">
                    <tr>
                        <td align="center">
-                           <asp:Label ID="lbl_titulo" runat="server" Text=""></asp:Label>
+                           <asp:Label ID="lbl_titulo" runat="server" Text="" Font-Size="X-Large"></asp:Label>
                        </td>
                    </tr>
                    <tr>
                        <td>
                            <table width="100%">
                                <tr>
-                                   <td>Código de la empresa:</td>
+                                   <td><h5 class="text-right">Código de la empresa : </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_id_empresa" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_id_empresa" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                               <tr>
-                                   <td>Categoria:</td>
+                                   <td><h5 class="text-right">Categoría : </h5></td>
                                    <td>
-                                       <asp:DropDownList ID="drp_cate" runat="server"></asp:DropDownList>
+                                       <asp:DropDownList ID="drp_cate" runat="server" CssClass="btn btn-default dropdown-toggle"></asp:DropDownList>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>Clase:</td>
+                                   <td><h5 class="text-right">Clase : </h5></td>
                                    <td>
-                                       <asp:DropDownList ID="drp_clase" runat="server"></asp:DropDownList>
+                                       <asp:DropDownList ID="drp_clase" runat="server" CssClass="btn btn-default dropdown-toggle" ></asp:DropDownList>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>Codigo del Tipo de Producto:</td>
+                                   <td><h5 class="text-right">Código tipo de producto : </h5></td>
                                    <td>
                                        <asp:Label ID="lbl_cod_tipo" runat="server" Text=""></asp:Label>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>Abreviatura:</td>
+                                   <td><h5 class="text-right">Abreviatura : </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_txt_abrv" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_txt_abrv" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                                <tr>
-                                   <td>descripcion:</td>
+                                   <td><h5 class="text-right">Descripción : </h5></td>
                                    <td>
-                                       <asp:TextBox ID="txt_txt_desc" Width="200px" runat="server"></asp:TextBox>
+                                       <asp:TextBox ID="txt_txt_desc" Width="200px" runat="server" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                            </table>
@@ -76,8 +76,8 @@
                    </tr>
                    <tr>
                        <td align="center">
-                           <asp:Button ID="btn_grabar" runat="server" Text="Grabar" OnClick="btn_grabar_Click"    />&nbsp
-                           <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click"  />
+                           <asp:Button ID="btn_grabar" runat="server" Text="Grabar" OnClick="btn_grabar_Click"  CssClass="btn btn-success"  />&nbsp
+                           <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" CssClass="btn btn-danger"  />
                        </td>
                    </tr>
 
@@ -89,7 +89,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="grd_tipo" Width="100%" runat="server" AutoGenerateColumns="False" >
+                <asp:GridView ID="grd_tipo" Width="100%" runat="server" AutoGenerateColumns="False" GridLines="None"  UseAccessibleHeader="true" CssClass="table table-striped">
                     <Columns>
                         <asp:BoundField DataField="cod_tipo" HeaderText="Codigo del tipo de Producto" />
                         <asp:BoundField DataField="txt_abrv" HeaderText="Abreviatura" />

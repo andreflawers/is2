@@ -28,6 +28,7 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
+            grd_clase.HeaderRow.TableSection = TableRowSection.TableHeader;
             Panel_mant_clase.Visible = false;
         }
         private void fillDropDownListCategoria()
@@ -122,6 +123,7 @@ namespace aplhaABCM3._1.Pages
         protected void lkb_editar_Click(object sender, EventArgs e)
         {
             LinkButton lnk = (LinkButton)sender;
+            fillDropDownListCategoria();
             string codigo = lnk.CommandArgument;
             Result_transaccion obj_transac = new Result_transaccion();
             CEClase obj_clase = CCClase.Clase_Consultar_datos(obj_transac, codigo);
@@ -138,8 +140,7 @@ namespace aplhaABCM3._1.Pages
             }
             else
             {
-                txt_id_empresa.Text = "";
-               // fillDropDownListCategoria();
+                txt_id_empresa.Text = "";                
                 lbl_cod_clase.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";

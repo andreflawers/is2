@@ -28,6 +28,7 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
+            grd_um.HeaderRow.TableSection = TableRowSection.TableHeader;
             Panel_mant_um.Visible = false;
         }
         private void llenarGrillaConProcedimiento()

@@ -31,6 +31,7 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
+            grd_marca.HeaderRow.TableSection = TableRowSection.TableHeader;
             Panel_mant_marca.Visible = false;
         }
 

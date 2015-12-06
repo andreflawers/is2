@@ -3,10 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table width="700px" align="center">
+    <table width="700px" class="form-group left">
         <tr>
             <td align="center">
-                <h1>Lista de Productos</h1>
+                <h2>Directorio</h2>
             </td>
         </tr>
         <tr>
@@ -16,79 +16,88 @@
         </tr>
         <tr>
             <td align="left">
-             <%--   <asp:LinkButton ID="lkb_nuevo_producto" runat="server" OnClick="lkb_nuevo_producto_Click" >Registrar nuevo producto</asp:LinkButton>--%>
+                <%--   <asp:LinkButton ID="lkb_nuevo_producto" runat="server" OnClick="lkb_nuevo_producto_Click" >Registrar nuevo producto</asp:LinkButton>--%>
             </td>
         </tr>
         <tr>
             <td align="left">
-                <asp:Panel ID="Panel_mant_producto" Width="100%" BorderStyle="Solid" BorderWidth="1" runat="server">
-                     <table width="100%">
-                   <tr>
-                       <td align="center">
-                           <asp:Label ID="lbl_titulo" runat="server" Text=""></asp:Label>
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
+
+                <table width="100%">
+                    <tr>
+                        <td align="center">
+                            <asp:Label ID="lbl_titulo" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <table width="750px" class="form-group">
-                        <tr>
-                            <td style="width: 100px;" class="text-right">Categoría :</td>
-                            <td class="form-control" style="width: 150px;">
-                                <asp:DropDownList ID="drpCategoria" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnCate" runat="server" Text="..." OnClick="btnCate_Click" /></td>
-                            <td style="width: 200px;" class="text-right">Marca : </td>
-                            <td class="form-control" style="width: 100px;">
-                                <asp:DropDownList ID="drpMarca" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnMarca" runat="server" Text="..." OnClick="btnMarca_Click" /></td>
 
-                        </tr>
-                        <tr>
-                            <td class="text-right">Clase : </td>
-                            <td class="form-control" style="width: 150px;">
-                                <asp:DropDownList ID="drpClase" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnClase" runat="server" Text="..." OnClick="btnClase_Click" /></td>
-                            <td class="text-right">Modelo : </td>
-                            <td class="form-control" style="width: 100px;">
-                                <asp:DropDownList ID="drpModelo" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnModelo" runat="server" Text="..." OnClick="btnModelo_Click" /></td>
-                        </tr>
-                        <tr>
-                            <td class="text-right">Tipo de Producto : </td>
-                            <td class="form-control" style="width: 150px;">
-                                <asp:DropDownList ID="drpTipoProducto" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnTipoProducto" runat="server" Text="..." OnClick="btnTipoProducto_Click" /></td>
-                            <td class="text-right">Unidad : </td>
-                            <td class="form-control" style="width: 100px;">
-                                <asp:DropDownList ID="drpUnidad" runat="server"></asp:DropDownList></td>
-                            <td>
-                                <asp:Button ID="btnUnidad" runat="server" Text="..." OnClick="btnUnidad_Click" /></td>
-                        </tr>
+                                <tr>
+                                    <td style="width: 100px;">
+                                        <h4 class="text-right">Categoría : </h4>
+                                    </td>
+                                    <td class="dropdown" style="width: 150px;">
+                                        <asp:DropDownList ID="drpCategoria" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList>
+                                    </td>
+                                    <td>&nbsp<asp:Button ID="btnCate" runat="server" Text="..." OnClick="btnCate_Click" CssClass="btn btn-warning" /></td>
+                                    <td style="width: 200px;">
+                                        <h4 class="text-right">Marca : </h4>
+                                    </td>
+                                    <td style="width: 100px;">
+                                        <asp:DropDownList ID="drpMarca" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList></td>
+                                    <td>&nbsp<asp:Button ID="btnMarca" runat="server" Text="..." OnClick="btnMarca_Click" CssClass="btn btn-warning" /></td>
 
-                    </table>
-                       </td>
-                   </tr>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="text-right">Clase : </h4>
+                                    </td>
+                                    <td style="width: 150px;">
+                                        <asp:DropDownList ID="drpClase" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList></td>
+                                    <td>&nbsp<asp:Button ID="btnClase" runat="server" Text="..." OnClick="btnClase_Click" CssClass="btn btn-warning" /></td>
+
+                                    <td>
+                                        <h4 class="text-right">Modelo : </h4>
+                                    </td>
+                                    <td style="width: 100px;">
+                                        <asp:DropDownList ID="drpModelo" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList></td>
+                                    <td>&nbsp<asp:Button ID="btnModelo" runat="server" Text="..." OnClick="btnModelo_Click" CssClass="btn btn-warning" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="text-right">Tipo :</h4>
+                                    </td>
+                                    <td style="width: 150px;">
+                                        <asp:DropDownList ID="drpTipoProducto" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList></td>
+                                    <td>&nbsp<asp:Button ID="btnTipoProducto" runat="server" Text="..." OnClick="btnTipoProducto_Click" CssClass="btn btn-warning" /></td>
+
+                                    <td>
+                                        <h4 class="text-right">Unidad : </h4>
+                                    </td>
+                                    <td style="width: 100px;">
+                                        <asp:DropDownList ID="drpUnidad" runat="server" CssClass="btn btn-default btn-sm dropdown-toggle"></asp:DropDownList></td>
+                                    <td>&nbsp<asp:Button ID="btnUnidad" runat="server" Text="..." OnClick="btnUnidad_Click" CssClass="btn btn-warning" /></td>
+                                </tr>
+                </table>
+            </td>
+            </tr>
                    <tr>
                        <td align="center">
                            <asp:Label ID="lbl_confirmacion" runat="server" Text=""></asp:Label>
                        </td>
                    </tr>
-                   <tr>
-                       <td align="center">
-                           <asp:Button ID="btn_grabar" runat="server" Text="Grabar" OnClick="btn_grabar_Click"    />&nbsp
-                           <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click"  />
-                       </td>
-                   </tr>
-               </table>
-                </asp:Panel>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="btn_grabar" runat="server" Text="Ir a Productos" OnClick="btn_grabar_Click" CssClass="btn btn-success"/>&nbsp                           
+                </td>
+            </tr>
+            </table>
+                
             </td>
-        </tr> 
-        <tr> 
-            <td> <br />
+        </tr>
+        <tr>
+            <td>
+                <br />
                 <asp:GridView ID="grd_producto" Width="100%" runat="server" AutoGenerateColumns="False">
                     <Columns>
                         <asp:BoundField DataField="id_producto" HeaderText="Codigo del producto" />
@@ -107,7 +116,7 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="lkb_eliminar" runat="server"
                                     CommandArgument='<%# Eval("id_producto") %>'
-                                    OnClientClick="return confirm('Esta seguro de eliminar el producto?')" OnClick="lkb_eliminar_Click" >Eliminar</asp:LinkButton>
+                                    OnClientClick="return confirm('Esta seguro de eliminar el producto?')" OnClick="lkb_eliminar_Click">Eliminar</asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
