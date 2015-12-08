@@ -10,7 +10,7 @@
 namespace aplhaABCM3._1.Pages {
     
     
-    public partial class FormModelo {
+    public partial class FormTipoProducto {
         
         /// <summary>
         /// lbl_mesg_01 control.
@@ -22,22 +22,22 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
         
         /// <summary>
-        /// lkb_nueva_modelo control.
+        /// lkb_nuevo_tipo_producto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_modelo;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_nuevo_tipo_producto;
         
         /// <summary>
-        /// Panel_mant_modelo control.
+        /// Panel_mant_tipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_mant_modelo;
+        protected global::System.Web.UI.WebControls.Panel Panel_mant_tipo;
         
         /// <summary>
         /// lbl_titulo control.
@@ -58,13 +58,31 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
         
         /// <summary>
-        /// lbl_cod_modelo control.
+        /// drp_cate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cod_modelo;
+        protected global::System.Web.UI.WebControls.DropDownList drp_cate;
+        
+        /// <summary>
+        /// drp_clase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drp_clase;
+        
+        /// <summary>
+        /// lbl_cod_tipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_cod_tipo;
         
         /// <summary>
         /// txt_txt_abrv control.
@@ -112,12 +130,12 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
         
         /// <summary>
-        /// grd_modelo control.
+        /// grd_tipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grd_modelo;
+        protected global::System.Web.UI.WebControls.GridView grd_tipo;
     }
 }

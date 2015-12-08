@@ -13,6 +13,24 @@ namespace aplhaABCM3._1.Pages {
     public partial class directorio {
         
         /// <summary>
+        /// lbl_mesg_01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
+        
+        /// <summary>
+        /// lbl_titulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_titulo;
+        
+        /// <summary>
         /// drpCategoria control.
         /// </summary>
         /// <remarks>
@@ -22,13 +40,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
         
         /// <summary>
-        /// Button1 control.
+        /// btnCate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnCate;
         
         /// <summary>
         /// drpMarca control.
@@ -58,13 +76,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.DropDownList drpClase;
         
         /// <summary>
-        /// Button2 control.
+        /// btnClase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnClase;
         
         /// <summary>
         /// drpModelo control.
@@ -94,13 +112,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.DropDownList drpTipoProducto;
         
         /// <summary>
-        /// Button4 control.
+        /// btnTipoProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button btnTipoProducto;
         
         /// <summary>
         /// drpUnidad control.
@@ -119,5 +137,32 @@ namespace aplhaABCM3._1.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUnidad;
+        
+        /// <summary>
+        /// lbl_confirmacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_confirmacion;
+        
+        /// <summary>
+        /// btn_grabar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_grabar;
+        
+        /// <summary>
+        /// grd_producto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grd_producto;
     }
 }

@@ -40,11 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDCategoria.cs" />
+    <Compile Include="CDClase.cs" />
     <Compile Include="CDConnection .cs" />
+    <Compile Include="CDinventario.cs" />
     <Compile Include="CDMarca.cs" />
     <Compile Include="CDModelo.cs" />
-    <Compile Include="CDPresentacion.cs" />
-    <Compile Include="CDSubFamilia.cs" />
+    <Compile Include="CDProducto.cs" />
+    <Compile Include="CDTipoProducto.cs" />
     <Compile Include="CDUnidad_Medida.cs" />
     <Compile Include="CDuser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

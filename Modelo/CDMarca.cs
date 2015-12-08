@@ -69,7 +69,7 @@ namespace Modelo
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_empresa", SqlDbType.BigInt).Value = obj_marca.id_empresa;
-                    cmd.Parameters.Add("@cod_iso_idio_orgn", SqlDbType.VarChar, 2).Value = obj_marca.cod_iso_idio_orgn;
+                    //cmd.Parameters.Add("@cod_iso_idio_orgn", SqlDbType.VarChar, 2).Value = obj_marca.cod_iso_idio_orgn;
                     cmd.Parameters.Add("@cod_marca", SqlDbType.VarChar, 3).Value = obj_marca.cod_marca;
                     cmd.Parameters.Add("@txt_abrv", SqlDbType.VarChar, 10).Value = obj_marca.txt_abrv;
                     cmd.Parameters.Add("@txt_desc", SqlDbType.VarChar, 50).Value = obj_marca.txt_desc;

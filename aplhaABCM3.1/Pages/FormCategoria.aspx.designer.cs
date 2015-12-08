@@ -10,7 +10,7 @@
 namespace aplhaABCM3._1.Pages {
     
     
-    public partial class FormModelo {
+    public partial class FormCategoria {
         
         /// <summary>
         /// lbl_mesg_01 control.
@@ -22,22 +22,22 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
         
         /// <summary>
-        /// lkb_nueva_modelo control.
+        /// lkb_nueva_categoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_modelo;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_categoria;
         
         /// <summary>
-        /// Panel_mant_modelo control.
+        /// Panel_mant_cate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_mant_modelo;
+        protected global::System.Web.UI.WebControls.Panel Panel_mant_cate;
         
         /// <summary>
         /// lbl_titulo control.
@@ -58,13 +58,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
         
         /// <summary>
-        /// lbl_cod_modelo control.
+        /// lbl_cod_cate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cod_modelo;
+        protected global::System.Web.UI.WebControls.Label lbl_cod_cate;
         
         /// <summary>
         /// txt_txt_abrv control.
@@ -112,12 +112,12 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
         
         /// <summary>
-        /// grd_modelo control.
+        /// grd_cate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grd_modelo;
+        protected global::System.Web.UI.WebControls.GridView grd_cate;
     }
 }

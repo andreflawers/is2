@@ -11,7 +11,14 @@ namespace aplhaABCM3._1.Templates
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         lblUser.Text = Session["user"].ToString();
+            try
+            {
+                lblUser.Text = Session["user"].ToString();
+            }
+            catch
+            {
+                Response.Redirect("../Pages/Login.aspx");
+            }
         }
     }
 }
