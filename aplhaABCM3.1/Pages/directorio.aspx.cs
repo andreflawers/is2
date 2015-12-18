@@ -230,5 +230,10 @@ namespace aplhaABCM3._1.Pages
                 lbl_mesg_01.Text = obj_transac.msg_error;
             }*/
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/WebFormProducto.aspx");
+        }
     }
 }

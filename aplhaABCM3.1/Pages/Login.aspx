@@ -27,7 +27,7 @@
                              <asp:TextBox ID="txtPassword" runat="server"  CssClass="form-control" placeholder="Password" required TextMode="Password" ></asp:TextBox>
                             <%--<input type="password" class="form-control" placeholder="Password" required>--%>
                             <asp:Label ID="lblError" runat="server" Visible="false" Text="" ForeColor="Red" CssClass="text-center"></asp:Label>
-                            <asp:Button class="btn btn-lg btn-primary btn-block"
+                            <asp:Button class="btn btn-lg btn-primary btn-block" Height="40px"
                                  ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />                       
                             <a href="#" class="pull-right need-help">Necesita ayuda? </a><span class="clearfix"></span>
                         </form>

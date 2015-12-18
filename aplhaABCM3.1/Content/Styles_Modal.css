@@ -1,0 +1,18 @@
+﻿body {
+    font-family:Arial;
+    font-size:10pt;
+}
+
+.modalBackground {
+background-color:#e6e6e6;
+filter:alpha(opacity=50);
+opacity:0.7;
+}
+
+.modalPopUp {
+background-color:white;
+border:1px ridge black;
+padding-top:10px;
+padding-left:10px;
+
+}

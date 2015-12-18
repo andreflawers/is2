@@ -31,7 +31,7 @@ namespace aplhaABCM3._1.Pages
             
             llenarGrillaConProcedimiento();
             grd_cate.HeaderRow.TableSection = TableRowSection.TableHeader;
-            Panel_mant_cate.Visible = false;
+            //Panel_mant_cate.Visible = false;
             
         }
         private void llenarGrillaConProcedimiento()
@@ -75,8 +75,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
-
-            Panel_mant_cate.Visible = true;
+            ModalPopupExtender1.Show();
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
@@ -105,7 +104,7 @@ namespace aplhaABCM3._1.Pages
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             this.Modo_Edicion = "N";
-            Panel_mant_cate.Visible = true;
+            //Panel_mant_cate.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
@@ -128,17 +127,31 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.Text = "Se grabó la información con éxito";
 
                 llenarGrillaConProcedimiento();
+                limpiartextbox();
             }
             else
             {
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = "No se pudo grabar la información" + obj_transac.msg_error;
             }
+
+            
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Panel_mant_cate.Visible = false;
+            limpiartextbox();
         }
+
+        private void limpiartextbox()
+        {
+            txt_id_empresa.Text = "";
+            lbl_cod_cate.Text = "";
+            txt_txt_abrv.Text = "";
+            txt_txt_desc.Text = "";
+            lbl_confirmacion.Text = "";
+        }
+
+        
     }
 }
