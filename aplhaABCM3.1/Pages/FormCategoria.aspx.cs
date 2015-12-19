@@ -30,8 +30,6 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_cate.HeaderRow.TableSection = TableRowSection.TableHeader;
-            //Panel_mant_cate.Visible = false;
-            
         }
         private void llenarGrillaConProcedimiento()
         {
@@ -51,6 +49,7 @@ namespace aplhaABCM3._1.Pages
 
         protected void lkb_editar_Click(object sender, EventArgs e)
         {
+
             LinkButton lnk = (LinkButton)sender;
             string codigo = lnk.CommandArgument;
             Result_transaccion obj_transac = new Result_transaccion();
@@ -90,7 +89,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_mesg_01.Text = "";
             }
             else
-            {
+            { 
                 lbl_mesg_01.Text = obj_transac.msg_error;
             }
         }
@@ -99,6 +98,7 @@ namespace aplhaABCM3._1.Pages
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             Result_transaccion obj_transac = new Result_transaccion();
             CECategoria obj_cate = new CECategoria();
             obj_cate.id_empresa = int.Parse(txt_id_empresa.Text);
@@ -117,7 +117,6 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.Text = "Se grabó la información con éxito";
 
                 llenarGrillaConProcedimiento();
-                //limpiartextbox();
             }
             else
             {
@@ -130,6 +129,7 @@ namespace aplhaABCM3._1.Pages
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Hide();
             limpiartextbox();
         }
 
@@ -144,10 +144,12 @@ namespace aplhaABCM3._1.Pages
 
         protected void lkb_nueva_categoria_Click1(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             lbl_titulo.Text = "Registrando datos de la categoria";
             limpiartextbox();
             Modo_Edicion = "N";
         }
+
 
         
     }

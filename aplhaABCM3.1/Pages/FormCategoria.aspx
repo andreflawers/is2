@@ -15,7 +15,8 @@
                     <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista de Categorias</h1>
                     <div class="col-md-10">
                         <asp:Label ID="lbl_mesg_01" runat="server" Text="" CssClass="text_error"></asp:Label>
-                        <asp:LinkButton ID="lkb_nueva_categoria" runat="server"  OnPreRender="lkb_nueva_categoria_Click1" OnClientClick="return Mostrar_Ventana_Modal"  >Registrar nueva categoria</asp:LinkButton>
+                        <asp:Button ID="Button1" runat="server" Text="" Height="1px" />
+                        <asp:LinkButton ID="lkb_nueva_categoria" runat="server"  OnClick="lkb_nueva_categoria_Click1"   >Registrar nueva categoria</asp:LinkButton>
                         <asp:Panel runat="server" ID="Panel_mant_cate" CssClass="modalPopUp">
                             <table width="100%">
                                 <tr>
@@ -78,7 +79,7 @@
                         </asp:Panel>
                         <ajaxtoolkit:modalpopupextender ID="ModalPopupExtender1" runat="server" 
                              PopupControlID="Panel_mant_cate"
-                            TargetControlID="lkb_nueva_categoria"
+                            TargetControlID="Button1"  Enabled="true" DropShadow="true"
                             BackgroundCssClass="modalBackground"></ajaxtoolkit:modalpopupextender>
                         </div>
                     <div class="col-md-12 ">
