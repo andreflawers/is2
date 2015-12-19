@@ -28,7 +28,6 @@ namespace aplhaABCM3._1.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack) return;
-            
             llenarGrillaConProcedimiento();
             grd_cate.HeaderRow.TableSection = TableRowSection.TableHeader;
             //Panel_mant_cate.Visible = false;
@@ -96,16 +95,7 @@ namespace aplhaABCM3._1.Pages
             }
         }
 
-        protected void lkb_nueva_categoria_Click(object sender, EventArgs e)
-        {
-            lbl_titulo.Text = "Registrando datos de la categoria";
-            txt_id_empresa.Text = "";
-            lbl_cod_cate.Text = "";
-            txt_txt_abrv.Text = "";
-            txt_txt_desc.Text = "";
-            this.Modo_Edicion = "N";
-            //Panel_mant_cate.Visible = true;
-        }
+        
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
@@ -127,7 +117,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.Text = "Se grabó la información con éxito";
 
                 llenarGrillaConProcedimiento();
-                limpiartextbox();
+                //limpiartextbox();
             }
             else
             {
@@ -150,6 +140,13 @@ namespace aplhaABCM3._1.Pages
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             lbl_confirmacion.Text = "";
+        }
+
+        protected void lkb_nueva_categoria_Click1(object sender, EventArgs e)
+        {
+            lbl_titulo.Text = "Registrando datos de la categoria";
+            limpiartextbox();
+            Modo_Edicion = "N";
         }
 
         
