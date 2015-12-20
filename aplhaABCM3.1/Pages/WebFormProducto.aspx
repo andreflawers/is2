@@ -5,12 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 well">
+            <div class="col-md-8">
                 <asp:Panel ID="panelBusAvanzada"  runat="server" Visible="false">
                     
                 </asp:Panel>
                 <br />
-                <asp:Button ID="btn_BusquedadAvanzada" runat="server" Text="Busquedad Avanzada" Cssclass="btn btn-primary btn-warning" />
+                <%--<asp:Button ID="btn_BusquedadAvanzada" runat="server" Text="Busquedad Avanzada" Cssclass="btn btn-primary btn-warning" />--%>
                 <br />
                 <br>
                 <div >

@@ -29,7 +29,7 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_clase.HeaderRow.TableSection = TableRowSection.TableHeader;
-            Panel_mant_clase.Visible = false;
+            //Panel_mant_clase.Visible = false;
         }
         private void fillDropDownListCategoria()
         {
@@ -83,7 +83,8 @@ namespace aplhaABCM3._1.Pages
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             this.Modo_Edicion = "N";
-            Panel_mant_clase.Visible = true;
+            ModalPopupExtender1.Show();
+            //Panel_mant_clase.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
@@ -117,7 +118,8 @@ namespace aplhaABCM3._1.Pages
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Panel_mant_clase.Visible = false;
+            ModalPopupExtender1.Hide();
+            //Panel_mant_clase.Visible = false;
         }
 
         protected void lkb_editar_Click(object sender, EventArgs e)
@@ -147,8 +149,8 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
-
-            Panel_mant_clase.Visible = true;
+            ModalPopupExtender1.Show();
+            //Panel_mant_clase.Visible = true;
         }
     }
 }

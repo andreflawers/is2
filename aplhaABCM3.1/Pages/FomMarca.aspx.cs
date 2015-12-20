@@ -32,7 +32,7 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_marca.HeaderRow.TableSection = TableRowSection.TableHeader;
-            Panel_mant_marca.Visible = false;
+            //Panel_mant_marca.Visible = false;
         }
 
         private void llenarGrillaConProcedimiento()
@@ -81,7 +81,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
 
-            Panel_mant_marca.Visible = true;
+            ModalPopupExtender1.Show();
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
@@ -111,11 +111,12 @@ namespace aplhaABCM3._1.Pages
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             this.Modo_Edicion = "N";
-            Panel_mant_marca.Visible = true;
+            ModalPopupExtender1.Show();
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             Result_transaccion obj_transac = new Result_transaccion();
             CEMarca obj_marca = new CEMarca();
             obj_marca.id_empresa =int.Parse( txt_id_empresa.Text);
@@ -144,8 +145,17 @@ namespace aplhaABCM3._1.Pages
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Panel_mant_marca.Visible = false;
+            limpiarcajas();
+            ModalPopupExtender1.Hide();
         }
-       
+
+        private void limpiarcajas()
+        {
+            txt_id_empresa.Text = "";
+            txt_cod_idio.Text = "";
+            lbl_cod_marca.Text = "";
+            txt_txt_abrv.Text = "";
+            txt_txt_desc.Text = "";
+        }
     }
 }

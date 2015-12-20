@@ -15,7 +15,7 @@
                     <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista de Categorias</h1>
                     <div class="col-md-10">
                         <asp:Label ID="lbl_mesg_01" runat="server" Text="" CssClass="text_error"></asp:Label>
-                        <asp:Button ID="Button1" runat="server" Text="" Height="1px" />
+                        <asp:Button ID="Button1" runat="server" Text="" Height="1px" BackColor="#F6F6F6" BorderColor="#F3F3F3" BorderStyle="None" />
                         <asp:LinkButton ID="lkb_nueva_categoria" runat="server"  OnClick="lkb_nueva_categoria_Click1"   >Registrar nueva categoria</asp:LinkButton>
                         <asp:Panel runat="server" ID="Panel_mant_cate" CssClass="modalPopUp">
                             <table width="100%">

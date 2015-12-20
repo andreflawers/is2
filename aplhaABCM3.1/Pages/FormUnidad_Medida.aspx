@@ -2,25 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table width="700px" class="left">
-        <tr>
-            <td align="center">
-                <h1>Lista de Modelos</h1>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <asp:Label ID="lbl_mesg_01" runat="server" Text="" CssClass="text_error"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <asp:LinkButton ID="lkb_nueva_modelo" runat="server" OnClick="lkb_nueva_modelo_Click" >Registrar nuevo modelo</asp:LinkButton>
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <asp:Panel ID="Panel_mant_um" Width="550px" CssClass="panel panel-default" runat="server">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <div class="col-md-push-1 col-md-10">
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista de Medidas</h1>
+                    <div class="col-md-10">
+                        <asp:Label ID="lbl_mesg_01" runat="server" Text="" CssClass="text_error"></asp:Label>
+                        <asp:LinkButton ID="lkb_nueva_modelo" runat="server" OnClick="lkb_nueva_modelo_Click" >Registrar nuevo modelo</asp:LinkButton>
+                        <asp:Button ID="Button1" runat="server" Text="" Height="1px" BackColor="#F6F6F6" BorderColor="#F3F3F3" BorderStyle="None" />
+                         <asp:Panel ID="Panel_mant_um" Width="550px" CssClass="panel panel-default" runat="server">
                <table width="100%">
                    <tr>
                        <td align="center">
@@ -72,12 +64,14 @@
                </table>
 
             </asp:Panel>
-            </td>
-            
-        </tr>
-        <tr>
-            <td>
-                <asp:GridView ID="grd_um" Width="100%" runat="server" AutoGenerateColumns="False" UseAccessibleHeader="true"  GridLines="None" CssClass="table table-striped">
+                        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
+                            PopupControlID="Panel_mant_um"
+                            TargetControlID="Button1" Enabled="true" DropShadow="true"
+                            BackgroundCssClass="modalBackground">
+                        </ajaxToolkit:ModalPopupExtender>
+                    </div>
+                    <div class="col-md-12">
+                        <asp:GridView ID="grd_um" Width="100%" runat="server" AutoGenerateColumns="False" UseAccessibleHeader="true"  GridLines="None" CssClass="table table-striped">
                     <Columns>
                         <asp:BoundField DataField="cod_um" HeaderText="Codigo de la unidad de medida" />
                         <asp:BoundField DataField="txt_abrv" HeaderText="Abreviatura" />
@@ -96,8 +90,14 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-            </td>
-        </tr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </table>
+
+                
+               
+                
 </asp:Content>
