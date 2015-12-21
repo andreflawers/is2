@@ -30,11 +30,6 @@
                         <asp:BoundField DataField="Unidad" HeaderText="Unidad" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:LinkButton ID="lkb_editar" runat="server" CommandArgument='<%# Eval("id_producto") %>'>Editar</asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField>
-                            <ItemTemplate>
                                 <asp:LinkButton ID="lkb_eliminar" runat="server" 
                                     CommandArgument='<%# Eval("id_producto") %>' 
                                      OnClientClick="return confirm('Esta seguro de eliminar el producto?')" OnClick="lkb_eliminar_Click" >Eliminar</asp:LinkButton>
