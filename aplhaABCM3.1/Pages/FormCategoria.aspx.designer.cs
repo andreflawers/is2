@@ -31,15 +31,6 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_mesg_01;
         
         /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
         /// Control lkb_nueva_categoria.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace aplhaABCM3._1.Pages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_categoria;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control Panel_mant_cate.
@@ -76,13 +76,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
         
         /// <summary>
-        /// Control lbl_cod_cate.
+        /// Control txt_cod_cate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cod_cate;
+        protected global::System.Web.UI.WebControls.TextBox txt_cod_cate;
         
         /// <summary>
         /// Control txt_txt_abrv.

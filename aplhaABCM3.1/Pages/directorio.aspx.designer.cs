@@ -121,12 +121,21 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button btnUnidad;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btn_grabar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btn_grabar;
+        
+        /// <summary>
+        /// Control lbl_confirmacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_confirmacion;
     }
 }

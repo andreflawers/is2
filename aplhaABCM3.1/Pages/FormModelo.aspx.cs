@@ -29,8 +29,8 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_modelo.HeaderRow.TableSection = TableRowSection.TableHeader;
-            //Panel_mant_modelo.Visible = false;
         }
+        
         private void llenarGrillaConProcedimiento()
         {
             CCModelo oCCModelo = new CCModelo();
@@ -57,7 +57,7 @@ namespace aplhaABCM3._1.Pages
             {
                 lbl_titulo.Text = "Consultando datos del modelo";
                 txt_id_empresa.Text = obj_modelo.id_empresa + "";
-                lbl_cod_modelo.Text = obj_modelo.cod_modelo;
+                txt_cod_modelo.Text = obj_modelo.cod_modelo;
                 txt_txt_abrv.Text = obj_modelo.txt_abrv;
                 txt_txt_desc.Text = obj_modelo.txt_desc;
                 lbl_confirmacion.Text = "";
@@ -66,14 +66,13 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 txt_id_empresa.Text = "";
-                lbl_cod_modelo.Text = "";
+                txt_cod_modelo.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
             ModalPopupExtender1.Show();
-            //Panel_mant_modelo.Visible = true;
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
@@ -98,20 +97,21 @@ namespace aplhaABCM3._1.Pages
         {
             lbl_titulo.Text = "Registrando datos del modelo";
             txt_id_empresa.Text = "";
-            lbl_cod_modelo.Text = "";
+            txt_cod_modelo.Text = "";
+            lbl_confirmacion.Text = "";
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
             this.Modo_Edicion = "N";
             ModalPopupExtender1.Show();
-            //Panel_mant_modelo.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             Result_transaccion obj_transac = new Result_transaccion();
             CEModelo obj_modelo = new CEModelo();
             obj_modelo.id_empresa = int.Parse(txt_id_empresa.Text);
-            obj_modelo.cod_modelo = lbl_cod_modelo.Text;
+            obj_modelo.cod_modelo = txt_cod_modelo.Text;
             obj_modelo.txt_abrv = txt_txt_abrv.Text;
             obj_modelo.txt_desc = txt_txt_desc.Text;
             CCModelo.Modelo_Grabar(Modo_Edicion, obj_modelo, obj_transac);
@@ -119,7 +119,7 @@ namespace aplhaABCM3._1.Pages
             {
                 if (this.Modo_Edicion == "N")
                 {
-                    lbl_cod_modelo.Text = obj_modelo.cod_modelo;
+                    txt_cod_modelo.Text = obj_modelo.cod_modelo;
                     this.Modo_Edicion = "E";
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
@@ -137,7 +137,6 @@ namespace aplhaABCM3._1.Pages
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             ModalPopupExtender1.Hide();
-            //Panel_mant_modelo.Visible = false;
         }
     }
 }

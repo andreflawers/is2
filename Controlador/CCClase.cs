@@ -90,5 +90,11 @@ namespace Controlador
             CDClase oCDClase = new CDClase();
             return oCDClase.getClaseAll();
         }
+        public DataTable getclaseAnterior(string cod_cate)
+        {
+            CDClase oCDClase = new CDClase();
+            return oCDClase.getClaseAnterior(cod_cate);
+
+        }
     }
 }

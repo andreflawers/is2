@@ -94,13 +94,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.DropDownList drp_clase;
         
         /// <summary>
-        /// Control lbl_cod_tipo.
+        /// Control txt_cod_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cod_tipo;
+        protected global::System.Web.UI.WebControls.TextBox txt_cod_tipo;
         
         /// <summary>
         /// Control txt_txt_abrv.

@@ -43,6 +43,7 @@
     <Compile Include="CCClase.cs" />
     <Compile Include="CCInventario.cs" />
     <Compile Include="CCMarca.cs" />
+    <Compile Include="CCMarca_Modelo.cs" />
     <Compile Include="CCModelo.cs" />
     <Compile Include="CCProducto.cs" />
     <Compile Include="CCTipoProducto.cs" />

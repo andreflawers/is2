@@ -8,7 +8,7 @@ namespace Controlador
 {
     public class CCModelo
     {
-        public static CEModelo Modelo_Consultar_datos(Result_transaccion obj_transac, string m_cod_modelo)
+        public static CEModelo Modelo_Consultar_datos(Result_transaccion obj_transac,string m_cod_modelo)
         {
             CEModelo obj_modelo = new CEModelo();
             SqlConnection conn = null;
@@ -16,7 +16,7 @@ namespace Controlador
             try
             {
                 conn = new CDConnection().openDB();
-                obj_modelo = CDModelo.Modelo_Consultar_datos(conn, m_cod_modelo);
+                obj_modelo = CDModelo.Modelo_Consultar_datos(conn,m_cod_modelo);
 
                 obj_transac.resultado = 1;
                 obj_transac.msg_error = "";
@@ -89,6 +89,12 @@ namespace Controlador
         {
             CDModelo oCDModelo = new CDModelo();
             return oCDModelo.getModeloAll();
+        }
+        public DataTable getmodeloAnterior(string cod_marca)
+        {
+            CDModelo oCDModelo= new CDModelo();
+            return oCDModelo.getModeloAnterior(cod_marca);
+
         }
     }
 }

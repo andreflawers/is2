@@ -76,13 +76,13 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
         
         /// <summary>
-        /// Control lbl_cod_um.
+        /// Control txt_cod_um.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cod_um;
+        protected global::System.Web.UI.WebControls.TextBox txt_cod_um;
         
         /// <summary>
         /// Control txt_txt_abrv.

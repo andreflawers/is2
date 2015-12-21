@@ -11,7 +11,7 @@ namespace Modelo
 {
     public class CDModelo
     {
-        public static CEModelo Modelo_Consultar_datos(SqlConnection conn, string m_cod_modelo)
+        public static CEModelo Modelo_Consultar_datos(SqlConnection conn,string m_cod_modelo)
         {
             CEModelo obj_modelo = new CEModelo();
             try
@@ -104,6 +104,31 @@ namespace Modelo
                 CDConnection oCDConnection = new CDConnection();
                 oSqlConnection = oCDConnection.openDB();
                 SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
+                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
+                DataTable oDataTable = new DataTable();
+                oSqlDataAdapter.Fill(oDataTable);
+                return oDataTable;
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+                return null;
+            }
+        }
+        public DataTable getModeloAnterior(string cod_marca)
+        {
+
+            String procedure = "usp_modelo_Listar_anterior";
+            try
+            {
+                SqlConnection oSqlConnection = new SqlConnection();
+                CDConnection oCDConnection = new CDConnection();
+                oSqlConnection = oCDConnection.openDB();
+                SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
+                oSqlCommand.CommandType = CommandType.StoredProcedure;
+                oSqlCommand.Parameters.Add("@cod_marca", SqlDbType.VarChar, 3).Value = cod_marca;
+                oSqlCommand.ExecuteNonQuery();
                 SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
                 DataTable oDataTable = new DataTable();
                 oSqlDataAdapter.Fill(oDataTable);

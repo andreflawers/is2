@@ -1,4 +1,5 @@
 ﻿using Controlador;
+using Entidad;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +16,6 @@ namespace aplhaABCM3._1.Pages
         {
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
-            //panelBusAvanzada.Visible = true;
         }
         private void llenarGrillaConProcedimiento()
         {
@@ -48,6 +48,52 @@ namespace aplhaABCM3._1.Pages
             {
                 grd_Producto.DataSource = occproducto.getProductoListDescp_id(txtbuscarid.Text, txtbuscardescripcion.Text);
                 grd_Producto.DataBind();
+            }
+        }
+
+        protected void lkb_editar_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("~/Pages/directorio.aspx");
+            //LinkButton lnk = (LinkButton)sender;
+            //string codigo = lnk.CommandArgument;
+            //Result_transaccion obj_transac = new Result_transaccion();
+            //CEModelo obj_modelo = CCModelo.Modelo_Consultar_datos(obj_transac, codigo);
+            //if (obj_transac.resultado == 1)
+            //{
+            //    lbl_titulo.Text = "Consultando datos del modelo";
+            //    txt_id_empresa.Text = obj_modelo.id_empresa + "";
+            //    txt_cod_modelo.Text = obj_modelo.cod_modelo;
+            //    txt_txt_abrv.Text = obj_modelo.txt_abrv;
+            //    txt_txt_desc.Text = obj_modelo.txt_desc;
+            //    lbl_confirmacion.Text = "";
+            //    this.Modo_Edicion = "E";
+            //}
+            //else
+            //{
+            //    txt_id_empresa.Text = "";
+            //    txt_cod_modelo.Text = "";
+            //    txt_txt_abrv.Text = "";
+            //    txt_txt_desc.Text = "";
+            //    lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
+            //    lbl_confirmacion.Text = obj_transac.msg_error;
+            //}
+        }
+
+        protected void lkb_eliminar_Click(object sender, EventArgs e)
+        {
+            LinkButton lkb = (LinkButton)sender;
+            string codigo = lkb.CommandArgument;
+
+            Result_transaccion obj_transac = new Result_transaccion();
+            CCProducto.Prodcucto_Eliminar(obj_transac,codigo);
+            if (obj_transac.resultado == 1)
+            {
+                llenarGrillaConProcedimiento();
+                lbl_mesg_01.Text = "";
+            }
+            else
+            {
+                lbl_mesg_01.Text = obj_transac.msg_error;
             }
         }
     }

@@ -29,7 +29,6 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_tipo.HeaderRow.TableSection = TableRowSection.TableHeader;
-            //Panel_mant_tipo.Visible = false;
         }
         private void llenarGrillaConProcedimiento()
         {
@@ -54,15 +53,17 @@ namespace aplhaABCM3._1.Pages
             drp_cate.DataTextField = "txt_desc";
             drp_cate.DataValueField = "cod_cate";
             drp_cate.DataBind();
+            drp_cate.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void fillDropDownListClase()
         {
             CCClase oCCClase = new CCClase();
-            DataTable oDt = oCCClase.getclaseAll();
+            DataTable oDt = oCCClase.getclaseAll(); ;
             drp_clase.DataSource = oDt;
             drp_clase.DataTextField = "txt_desc";
             drp_clase.DataValueField = "cod_clase";
             drp_clase.DataBind();
+            drp_clase.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         protected void lkb_nuevo_tipo_producto_Click(object sender, EventArgs e)
         {
@@ -70,22 +71,23 @@ namespace aplhaABCM3._1.Pages
             txt_id_empresa.Text = "";
             fillDropDownListCategoria();
             fillDropDownListClase();
-            lbl_cod_tipo.Text = "";
+            txt_cod_tipo.Text = "";
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
+            lbl_confirmacion.Text = "";
             this.Modo_Edicion = "N";
             ModalPopupExtender1.Show();
-            //Panel_mant_tipo.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             Result_transaccion obj_transac = new Result_transaccion();
             CETipoProducto obj_tipo = new CETipoProducto();
             obj_tipo.id_empresa = int.Parse(txt_id_empresa.Text);
             obj_tipo.cod_cate = drp_cate.SelectedValue;
             obj_tipo.cod_clase = drp_clase.SelectedValue;
-            obj_tipo.cod_tipo = lbl_cod_tipo.Text;
+            obj_tipo.cod_tipo = txt_cod_tipo.Text;
             obj_tipo.txt_abrv = txt_txt_abrv.Text;
             obj_tipo.txt_desc = txt_txt_desc.Text;
             CCTipoProducto.Tipo_Producto_Grabar(Modo_Edicion, obj_tipo, obj_transac);
@@ -93,7 +95,7 @@ namespace aplhaABCM3._1.Pages
             {
                 if (this.Modo_Edicion == "N")
                 {
-                    lbl_cod_tipo.Text = obj_tipo.cod_tipo;
+                    txt_cod_tipo.Text = obj_tipo.cod_tipo;
                     this.Modo_Edicion = "E";
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
@@ -111,7 +113,6 @@ namespace aplhaABCM3._1.Pages
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             ModalPopupExtender1.Hide();
-            //Panel_mant_tipo.Visible = false;
         }
 
         protected void lkb_editar_Click(object sender, EventArgs e)
@@ -128,7 +129,7 @@ namespace aplhaABCM3._1.Pages
                 txt_id_empresa.Text = obj_tipo.id_empresa + "";
                 drp_cate.Text = obj_tipo.cod_cate;
                 drp_clase.Text = obj_tipo.cod_clase;
-                lbl_cod_tipo.Text = obj_tipo.cod_tipo;
+                txt_cod_tipo.Text = obj_tipo.cod_tipo;
                 txt_txt_abrv.Text = obj_tipo.txt_abrv;
                 txt_txt_desc.Text = obj_tipo.txt_desc;
                 lbl_confirmacion.Text = "";
@@ -137,14 +138,13 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 txt_id_empresa.Text = "";
-                lbl_cod_tipo.Text = "";
+                txt_cod_tipo.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
             ModalPopupExtender1.Show();
-            //Panel_mant_tipo.Visible = true;
         }
 
         protected void lkb_eliminar_Click(object sender, EventArgs e)
@@ -164,5 +164,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_mesg_01.Text = obj_transac.msg_error;
             }
         }
+
+        
     }
 }

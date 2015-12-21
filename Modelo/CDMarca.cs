@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Entidad;
 
 namespace Modelo
@@ -25,7 +21,6 @@ namespace Modelo
                     {
                         dr_reesult.Read();
                         obj_marca.id_empresa = int.Parse(dr_reesult["id_empresa"].ToString());
-                        obj_marca.cod_iso_idio_orgn = dr_reesult["cod_iso_idio_orgn"].ToString();
                         obj_marca.cod_marca=dr_reesult["cod_marca"].ToString();
                         obj_marca.txt_abrv = dr_reesult["txt_abrv"].ToString();
                         obj_marca.txt_desc=dr_reesult["txt_desc"].ToString();
@@ -47,7 +42,6 @@ namespace Modelo
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_empresa", SqlDbType.BigInt).Value = obj_marca.id_empresa;
-                    cmd.Parameters.Add("@cod_iso_idio_orgn", SqlDbType.VarChar,2).Value = obj_marca.cod_iso_idio_orgn;
                     cmd.Parameters.Add("@cod_marca", SqlDbType.VarChar, 3).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@txt_abrv", SqlDbType.VarChar,10).Value = obj_marca.txt_abrv;
                     cmd.Parameters.Add("@txt_desc", SqlDbType.VarChar,50).Value = obj_marca.txt_desc;
@@ -69,7 +63,6 @@ namespace Modelo
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_empresa", SqlDbType.BigInt).Value = obj_marca.id_empresa;
-                    //cmd.Parameters.Add("@cod_iso_idio_orgn", SqlDbType.VarChar, 2).Value = obj_marca.cod_iso_idio_orgn;
                     cmd.Parameters.Add("@cod_marca", SqlDbType.VarChar, 3).Value = obj_marca.cod_marca;
                     cmd.Parameters.Add("@txt_abrv", SqlDbType.VarChar, 10).Value = obj_marca.txt_abrv;
                     cmd.Parameters.Add("@txt_desc", SqlDbType.VarChar, 50).Value = obj_marca.txt_desc;

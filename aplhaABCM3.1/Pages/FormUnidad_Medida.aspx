@@ -31,7 +31,7 @@
                               <tr>
                                    <td><h5 class="text-right">Código de la unidad : </h5></td>
                                    <td>
-                                       <asp:Label ID="lbl_cod_um" runat="server" Text="" CssClass="form-control"></asp:Label>
+                                       <asp:TextBox ID="txt_cod_um" Width="200px" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                                <tr>

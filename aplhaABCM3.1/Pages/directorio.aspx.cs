@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Configuration;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -24,33 +25,19 @@ namespace aplhaABCM3._1.Pages
                 ViewState["Modo_Edicion"] = value;
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack) return;
-            //llenarGrillaConProcedimiento();
-            
+            drpClase.Items.Insert(0, new ListItem("Elija una categoria..", "0"));
+            drpTipoProducto.Items.Insert(0, new ListItem("Elija una clase..", "0"));
+            drpModelo.Items.Insert(0, new ListItem("Elija una marca..", "0"));
+            Modo_Edicion = "N";
             fillDropDownListCategoria();
-            fillDropDownListClase();
-            fillDropDownListTipoProducto();
             fillDropDownListMarca();
-            fillDropDownListModelo();
             fillDropDownListUnidadMedida();
         }
-        /*private void llenarGrillaConProcedimiento()
-        {
-            CCProducto oCCProducto = new CCProducto();
-            DataTable oDt = oCCProducto.getproductoAll();
-
-            if (oDt.Rows.Count > 0)
-            {
-                this.grd_producto.DataSource = oDt;
-                this.grd_producto.DataBind();
-            }
-            else
-            {
-                this.lbl_mesg_01.Text = "No existen datos";
-            }
-        }*/
+        
         private void fillDropDownListMarca()
         {
             CCMarca oCCMarca = new CCMarca();
@@ -60,15 +47,18 @@ namespace aplhaABCM3._1.Pages
             drpMarca.DataTextField = "txt_desc";
             drpMarca.DataValueField = "cod_marca";
             drpMarca.DataBind();
+            drpMarca.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void fillDropDownListModelo()
         {
             CCModelo oCCModelo = new CCModelo();
-            DataTable oDt = oCCModelo.getmodeloAll();
+            string cod = drpMarca.SelectedValue;
+            DataTable oDt = oCCModelo.getmodeloAnterior(cod);
             drpModelo.DataSource = oDt;
             drpModelo.DataTextField = "txt_desc";
             drpModelo.DataValueField = "cod_modelo";
             drpModelo.DataBind();
+            drpModelo.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void fillDropDownListUnidadMedida()
         {
@@ -78,6 +68,7 @@ namespace aplhaABCM3._1.Pages
             drpUnidad.DataTextField = "txt_desc";
             drpUnidad.DataValueField = "cod_um";
             drpUnidad.DataBind();
+            drpUnidad.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void fillDropDownListCategoria()
         {
@@ -87,24 +78,31 @@ namespace aplhaABCM3._1.Pages
             drpCategoria.DataTextField = "txt_desc";
             drpCategoria.DataValueField = "cod_cate";
             drpCategoria.DataBind();
+            drpCategoria.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void fillDropDownListClase()
         {
             CCClase oCCClase = new CCClase();
-            DataTable oDt = oCCClase.getclaseAll();
+            string nom = drpCategoria.SelectedValue;
+            DataTable oDt = oCCClase.getclaseAnterior(nom);
             drpClase.DataSource = oDt;
             drpClase.DataTextField = "txt_desc";
             drpClase.DataValueField = "cod_clase";
             drpClase.DataBind();
+            drpClase.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
+            
         }
         private void fillDropDownListTipoProducto()
         {
             CCTipoProducto oCCTipo = new CCTipoProducto();
-            DataTable oDt = oCCTipo.gettipoProductoAll();
+            string cate = drpCategoria.SelectedValue;
+            string clase = drpClase.SelectedValue;
+            DataTable oDt = oCCTipo.gettpAnterior(cate,clase); ;
             drpTipoProducto.DataSource = oDt;
             drpTipoProducto.DataTextField = "txt_desc";
             drpTipoProducto.DataValueField = "cod_tipo";
             drpTipoProducto.DataBind();
+            drpTipoProducto.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
 
         protected void btnMarca_Click(object sender, EventArgs e)
@@ -133,22 +131,24 @@ namespace aplhaABCM3._1.Pages
             Response.Redirect("~/Pages/FormTipoProducto.aspx");
         }
 
-        /*protected void lkb_nuevo_producto_Click(object sender, EventArgs e)
+        protected void drpCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_titulo.Text = "Registrando datos del producto";
-            fillDropDownListMarca();
-            fillDropDownListModelo();
-            fillDropDownListUnidadMedida();
-            fillDropDownListCategoria();
             fillDropDownListClase();
+        }
+
+        protected void drpClase_SelectedIndexChanged(object sender, EventArgs e)
+        {
             fillDropDownListTipoProducto();
-            this.Modo_Edicion = "N";
-            Panel_mant_producto.Visible = true;
-        }*/
+        }
+
+        protected void drpMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillDropDownListModelo();
+        }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
-           /* Result_transaccion obj_transac = new Result_transaccion();
+            Result_transaccion obj_transac = new Result_transaccion();
             CEProducto obj_prod = new CEProducto();
             obj_prod.cod_cate = drpCategoria.SelectedValue;
             obj_prod.cod_clase = drpClase.SelectedValue;
@@ -156,7 +156,7 @@ namespace aplhaABCM3._1.Pages
             obj_prod.cod_marca = drpMarca.SelectedValue;
             obj_prod.cod_modelo = drpModelo.SelectedValue;
             obj_prod.cod_um_principal = drpUnidad.SelectedValue;
-            CCProducto.Producto_Grabar(Modo_Edicion, obj_prod, obj_transac);
+            CCProducto.Producto_Grabar(Modo_Edicion,obj_prod,obj_transac);
             if (obj_transac.resultado == 1)
             {
                 if (this.Modo_Edicion == "N")
@@ -165,75 +165,12 @@ namespace aplhaABCM3._1.Pages
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
                 lbl_confirmacion.Text = "Se grabó la información con éxito";
-
-                llenarGrillaConProcedimiento();
             }
             else
             {
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = "No se pudo grabar la información" + obj_transac.msg_error;
-            }*/
-            Response.Redirect("../Pages/WebFormProducto.aspx");
-        }
-
-        protected void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            //Panel_mant_producto.Visible = false;
-        }
-
-        protected void lkb_editar_Click(object sender, EventArgs e)
-        {
-            /*LinkButton lnk = (LinkButton)sender;
-            string codigo = lnk.CommandArgument;
-            Result_transaccion obj_transac = new Result_transaccion();
-            CEProducto obj_prod = CCProducto.Producto_Consultar_datos(obj_transac, codigo);
-            if (obj_transac.resultado == 1)
-            {
-                lbl_titulo.Text = "Consultando datos del producto";
-                drpCategoria.Text = obj_prod.cod_cate;
-                drpClase.Text = obj_prod.cod_clase;
-                drpTipoProducto.Text = obj_prod.cod_tipo;
-                drpMarca.Text = obj_prod.cod_marca;
-                drpModelo.Text = obj_prod.cod_modelo;
-                drpUnidad.Text = obj_prod.cod_um_principal;
-                lbl_confirmacion.Text = "";
-                this.Modo_Edicion = "E";
             }
-            else
-            {
-                //txt_id_empresa.Text = "";
-                //// fillDropDownListCategoria();
-                //lbl_cod_tipo.Text = "";
-                //txt_txt_abrv.Text = "";
-                //txt_txt_desc.Text = "";
-                lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
-                lbl_confirmacion.Text = obj_transac.msg_error;
-            }
-
-            Panel_mant_producto.Visible = true;*/
-        }
-
-        protected void lkb_eliminar_Click(object sender, EventArgs e)
-        {
-            /*LinkButton lkb = (LinkButton)sender;
-            string codigo = lkb.CommandArgument;
-
-            Result_transaccion obj_transac = new Result_transaccion();
-            CCProducto.Producto_Eliminar(obj_transac, codigo);
-            if (obj_transac.resultado == 1)
-            {
-                llenarGrillaConProcedimiento();
-                lbl_mesg_01.Text = "";
-            }
-            else
-            {
-                lbl_mesg_01.Text = obj_transac.msg_error;
-            }*/
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Pages/WebFormProducto.aspx");
         }
     }
 }

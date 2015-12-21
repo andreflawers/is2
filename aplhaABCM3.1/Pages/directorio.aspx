@@ -12,7 +12,7 @@
                         <div class="form-group">
                             <asp:Label runat="server" Text="Categoria:" CssClass="col-md-6 control-label text-right" Font-Size="24px"></asp:Label>
                             <div class="form-inline">
-                                <asp:DropDownList ID="drpCategoria" runat="server" CssClass="form-control" Width="180px" ></asp:DropDownList>
+                                <asp:DropDownList ID="drpCategoria" runat="server" CssClass="form-control" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="drpCategoria_SelectedIndexChanged" ></asp:DropDownList>
                                 <div class="pull-right">
                                     <asp:Button ID="btnCate" runat="server" Text="..." OnClick="btnCate_Click" CssClass="btn btn-warning" />
                                 </div>
@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <asp:Label runat="server" Text="Clase:" CssClass="col-md-6 control-label text-right" Font-Size="24px"></asp:Label>
                             <div class="form-inline">
-                                <asp:DropDownList ID="drpClase" runat="server" CssClass="form-control" Width="180px"></asp:DropDownList>
+                                <asp:DropDownList ID="drpClase" runat="server" CssClass="form-control" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="drpClase_SelectedIndexChanged"></asp:DropDownList>
                                 <div class="pull-right">
                                     <asp:Button ID="btnClase" runat="server" Text="..." OnClick="btnClase_Click" CssClass="btn btn-warning" /></div>
                             </div>
@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <asp:Label runat="server" Text="Marca:" CssClass="col-md-6 control-label text-right" Font-Size="24px"></asp:Label>
                             <div class="form-inline">
-                                <asp:DropDownList ID="drpMarca" runat="server" CssClass="form-control" Width="180px"></asp:DropDownList>
+                                <asp:DropDownList ID="drpMarca" runat="server" CssClass="form-control" Width="180px" AutoPostBack="True" OnSelectedIndexChanged="drpMarca_SelectedIndexChanged"></asp:DropDownList>
                                 <div class="pull-right">
                                     <asp:Button ID="btnMarca" runat="server" Text="..." OnClick="btnMarca_Click" CssClass="btn btn-warning" /></div>
                             </div>
@@ -66,7 +66,9 @@
                 </div>
             </div >
             <div class="col-md-offset-5 col-md-2">
-                <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-block" Height="50px" Text="Ir a Producto" OnClick="Button1_Click" /></div>
+                <asp:Button ID="btn_grabar" runat="server" CssClass="btn btn-success btn-block" 
+                    Height="50px" Text="Grabar Producto" OnClick="btn_grabar_Click" /></div>
+            <asp:Label ID="lbl_confirmacion" runat="server" Text=""></asp:Label>
             </div> 
     </div>
 

@@ -32,7 +32,6 @@ namespace aplhaABCM3._1.Pages
             if (Page.IsPostBack) return;
             llenarGrillaConProcedimiento();
             grd_marca.HeaderRow.TableSection = TableRowSection.TableHeader;
-            //Panel_mant_marca.Visible = false;
         }
 
         private void llenarGrillaConProcedimiento()
@@ -63,8 +62,7 @@ namespace aplhaABCM3._1.Pages
             {
                 lbl_titulo.Text = "Consultando datos de la marca";
                 txt_id_empresa.Text =obj_marca.id_empresa+"";
-                txt_cod_idio.Text = obj_marca.cod_iso_idio_orgn;
-                lbl_cod_marca.Text = obj_marca.cod_marca;
+                txt_cod_marca.Text = obj_marca.cod_marca;
                 txt_txt_abrv.Text = obj_marca.txt_abrv;
                 txt_txt_desc.Text = obj_marca.txt_desc;
                 lbl_confirmacion.Text = "";
@@ -73,8 +71,7 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 txt_id_empresa.Text = "";
-                txt_cod_idio.Text = "";
-                lbl_cod_marca.Text = "";
+                txt_cod_marca.Text = "";
                 txt_txt_abrv.Text="";
                 txt_txt_desc.Text = "";
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
@@ -105,11 +102,7 @@ namespace aplhaABCM3._1.Pages
         protected void lkb_nueva_marca_Click(object sender, EventArgs e)
         {
             lbl_titulo.Text = "Registrando datos de la marca";
-            txt_id_empresa.Text = "";
-            txt_cod_idio.Text = "";
-            lbl_cod_marca.Text = "";
-            txt_txt_abrv.Text = "";
-            txt_txt_desc.Text = "";
+            limpiarcajas();
             this.Modo_Edicion = "N";
             ModalPopupExtender1.Show();
         }
@@ -120,8 +113,7 @@ namespace aplhaABCM3._1.Pages
             Result_transaccion obj_transac = new Result_transaccion();
             CEMarca obj_marca = new CEMarca();
             obj_marca.id_empresa =int.Parse( txt_id_empresa.Text);
-            obj_marca.cod_iso_idio_orgn = txt_cod_idio.Text;
-            obj_marca.cod_marca = lbl_cod_marca.Text;
+            obj_marca.cod_marca = txt_cod_marca.Text;
             obj_marca.txt_abrv = txt_txt_abrv.Text;
             obj_marca.txt_desc = txt_txt_desc.Text;
             CCMarca.Marca_Grabar(Modo_Edicion,obj_marca,obj_transac);
@@ -129,7 +121,7 @@ namespace aplhaABCM3._1.Pages
             {
                 if (this.Modo_Edicion == "N")
                 {
-                    lbl_cod_marca.Text = obj_marca.cod_marca;
+                    txt_cod_marca.Text = obj_marca.cod_marca;
                     this.Modo_Edicion = "E";
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
@@ -152,8 +144,8 @@ namespace aplhaABCM3._1.Pages
         private void limpiarcajas()
         {
             txt_id_empresa.Text = "";
-            txt_cod_idio.Text = "";
-            lbl_cod_marca.Text = "";
+            lbl_confirmacion.Text = "";
+            txt_cod_marca.Text = "";
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
         }

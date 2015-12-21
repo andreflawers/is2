@@ -10,7 +10,7 @@
 namespace aplhaABCM3._1.Pages {
     
     
-    public partial class FomMarca {
+    public partial class FormMarcaModelo {
         
         /// <summary>
         /// Control ScriptManager1.
@@ -40,22 +40,22 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control lkb_nueva_marca.
+        /// Control lkb_nueva_marca_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_marca;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_nueva_marca_modelo;
         
         /// <summary>
-        /// Control Panel_mant_marca.
+        /// Control Panel_mant_marca_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_mant_marca;
+        protected global::System.Web.UI.WebControls.Panel Panel_mant_marca_modelo;
         
         /// <summary>
         /// Control lbl_titulo.
@@ -67,40 +67,22 @@ namespace aplhaABCM3._1.Pages {
         protected global::System.Web.UI.WebControls.Label lbl_titulo;
         
         /// <summary>
-        /// Control txt_id_empresa.
+        /// Control drp_marca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_id_empresa;
+        protected global::System.Web.UI.WebControls.DropDownList drp_marca;
         
         /// <summary>
-        /// Control txt_cod_marca.
+        /// Control drp_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cod_marca;
-        
-        /// <summary>
-        /// Control txt_txt_abrv.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_txt_abrv;
-        
-        /// <summary>
-        /// Control txt_txt_desc.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_txt_desc;
+        protected global::System.Web.UI.WebControls.DropDownList drp_modelo;
         
         /// <summary>
         /// Control lbl_confirmacion.
@@ -139,12 +121,12 @@ namespace aplhaABCM3._1.Pages {
         protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtender1;
         
         /// <summary>
-        /// Control grd_marca.
+        /// Control grd_marca_modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grd_marca;
+        protected global::System.Web.UI.WebControls.GridView grd_marca_modelo;
     }
 }

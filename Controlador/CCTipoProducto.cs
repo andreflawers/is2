@@ -90,5 +90,11 @@ namespace Controlador
             CDTipoProducto oCDTipoProducto = new CDTipoProducto();
             return oCDTipoProducto.getTipoProductoAll();
         }
+        public DataTable gettpAnterior(string cod_cate,string cod_clase)
+        {
+            CDTipoProducto oCDTP = new CDTipoProducto();
+            return oCDTP.getTPAnterior(cod_cate,cod_clase);
+
+        }
     }
 }

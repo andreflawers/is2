@@ -119,5 +119,31 @@ namespace Modelo
                 return null;
             }
         }
+        public DataTable getClaseAnterior(string cod_cate)
+        {
+
+            String procedure = "usp_clase_Listar_anterior";
+            try
+            {
+                SqlConnection oSqlConnection = new SqlConnection();
+                CDConnection oCDConnection = new CDConnection();
+                oSqlConnection = oCDConnection.openDB();
+                SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
+                oSqlCommand.CommandType = CommandType.StoredProcedure;
+                oSqlCommand.Parameters.Add("@cod_cate", SqlDbType.VarChar,3).Value = cod_cate;
+                oSqlCommand.ExecuteNonQuery();
+                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
+                DataTable oDataTable = new DataTable();
+                oSqlDataAdapter.Fill(oDataTable);
+                return oDataTable;
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+                return null;
+            }
+        }
+        
     }
 }

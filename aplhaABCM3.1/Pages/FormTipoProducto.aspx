@@ -36,7 +36,7 @@
                                                     <h5 class="text-right">Categoría : </h5>
                                                 </td>
                                                 <td>
-                                                    <asp:DropDownList ID="drp_cate" runat="server" CssClass="btn btn-default dropdown-toggle"></asp:DropDownList>
+                                                    <asp:DropDownList ID="drp_cate" runat="server"  CssClass="btn btn-default dropdown-toggle"></asp:DropDownList>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -52,7 +52,7 @@
                                                     <h5 class="text-right">Código tipo de producto : </h5>
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="lbl_cod_tipo" runat="server" Text=""></asp:Label>
+                                                    <asp:TextBox ID="txt_cod_tipo" Width="200px" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -98,11 +98,13 @@
                     <div class="col-md-12">
                         <asp:GridView ID="grd_tipo" Width="100%" runat="server" AutoGenerateColumns="False" GridLines="None" UseAccessibleHeader="true" CssClass="table table-striped">
                             <Columns>
+                                <asp:BoundField DataField="cod_cate" HeaderText="Codigo de la categoria" />
+                                <asp:BoundField DataField="categoria" HeaderText="Descripcion de la categoria" />
+                                <asp:BoundField DataField="cod_clase" HeaderText="Codigo de la clase" />
+                                <asp:BoundField DataField="clase" HeaderText="Descripcion de la clase" />
                                 <asp:BoundField DataField="cod_tipo" HeaderText="Codigo del tipo de Producto" />
                                 <asp:BoundField DataField="txt_abrv" HeaderText="Abreviatura" />
                                 <asp:BoundField DataField="txt_desc" HeaderText="Descripcion del Tipo de Producto" />
-                                <asp:BoundField DataField="categoria" HeaderText="Descripcion de la categoria" />
-                                <asp:BoundField DataField="clase" HeaderText="Descripcion de la clase" />
                                 <asp:TemplateField>
                                     <ItemTemplate>
                                         <asp:LinkButton ID="lkb_editar" runat="server" CommandArgument='<%# Eval("cod_tipo") %>' OnClick="lkb_editar_Click">Editar</asp:LinkButton>

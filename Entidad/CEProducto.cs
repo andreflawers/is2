@@ -8,7 +8,7 @@ namespace Entidad
 {
     public class CEProducto
     {
-        public int id_producto { get; set; }
+        public string id_producto { get; set; }
         public string cod_cate { get; set; }
         public string cod_clase { get; set; }
         public string cod_tipo { get; set; }

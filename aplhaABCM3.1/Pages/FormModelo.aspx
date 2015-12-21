@@ -31,7 +31,7 @@
                               <tr>
                                    <td><h5 class="text-right">Código del modelo : </h5></td>
                                    <td>
-                                       <asp:Label ID="lbl_cod_modelo" runat="server" Text=""></asp:Label>
+                                       <asp:TextBox ID="txt_cod_modelo" Width="200px" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                                    </td>
                                </tr>
                                <tr>

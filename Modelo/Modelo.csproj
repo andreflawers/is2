@@ -44,6 +44,7 @@
     <Compile Include="CDConnection .cs" />
     <Compile Include="CDinventario.cs" />
     <Compile Include="CDMarca.cs" />
+    <Compile Include="CDMarca_Modelo.cs" />
     <Compile Include="CDModelo.cs" />
     <Compile Include="CDProducto.cs" />
     <Compile Include="CDTipoProducto.cs" />

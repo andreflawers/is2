@@ -39,6 +39,7 @@ namespace aplhaABCM3._1.Pages
             drp_cate.DataTextField = "txt_desc";
             drp_cate.DataValueField = "cod_cate";
             drp_cate.DataBind();
+            drp_cate.Items.Insert(0, new ListItem("Elija una Opcion..", "0"));
         }
         private void llenarGrillaConProcedimiento()
         {
@@ -79,21 +80,22 @@ namespace aplhaABCM3._1.Pages
             lbl_titulo.Text = "Registrando datos de la clase";
             txt_id_empresa.Text = "";
             fillDropDownListCategoria();
-            lbl_cod_clase.Text = "";
+            txt_cod_clase.Text = "";
             txt_txt_abrv.Text = "";
             txt_txt_desc.Text = "";
+            lbl_confirmacion.Text = "";
             this.Modo_Edicion = "N";
             ModalPopupExtender1.Show();
-            //Panel_mant_clase.Visible = true;
         }
 
         protected void btn_grabar_Click(object sender, EventArgs e)
         {
+            ModalPopupExtender1.Show();
             Result_transaccion obj_transac = new Result_transaccion();
             CEClase obj_clase = new CEClase();
             obj_clase.id_empresa = int.Parse(txt_id_empresa.Text);
             obj_clase.cod_cate = drp_cate.SelectedValue;
-            obj_clase.cod_clase = lbl_cod_clase.Text;
+            obj_clase.cod_clase = txt_cod_clase.Text;
             obj_clase.txt_abrv = txt_txt_abrv.Text;
             obj_clase.txt_desc = txt_txt_desc.Text;
             CCClase.Clase_Grabar(Modo_Edicion, obj_clase, obj_transac);
@@ -101,7 +103,7 @@ namespace aplhaABCM3._1.Pages
             {
                 if (this.Modo_Edicion == "N")
                 {
-                    lbl_cod_clase.Text = obj_clase.cod_clase;
+                    txt_cod_clase.Text = obj_clase.cod_clase;
                     this.Modo_Edicion = "E";
                 }
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Green;
@@ -119,7 +121,6 @@ namespace aplhaABCM3._1.Pages
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             ModalPopupExtender1.Hide();
-            //Panel_mant_clase.Visible = false;
         }
 
         protected void lkb_editar_Click(object sender, EventArgs e)
@@ -134,7 +135,7 @@ namespace aplhaABCM3._1.Pages
                 lbl_titulo.Text = "Consultando datos de la clase";
                 txt_id_empresa.Text = obj_clase.id_empresa + "";
                 drp_cate.Text = obj_clase.cod_cate;
-                lbl_cod_clase.Text = obj_clase.cod_clase;
+                txt_cod_clase.Text = obj_clase.cod_clase;
                 txt_txt_abrv.Text = obj_clase.txt_abrv;
                 txt_txt_desc.Text = obj_clase.txt_desc;
                 lbl_confirmacion.Text = "";
@@ -143,14 +144,13 @@ namespace aplhaABCM3._1.Pages
             else
             {
                 txt_id_empresa.Text = "";                
-                lbl_cod_clase.Text = "";
+                txt_cod_clase.Text = "";
                 txt_txt_abrv.Text = "";
                 txt_txt_desc.Text = "";
                 lbl_confirmacion.ForeColor = System.Drawing.Color.Red;
                 lbl_confirmacion.Text = obj_transac.msg_error;
             }
             ModalPopupExtender1.Show();
-            //Panel_mant_clase.Visible = true;
         }
     }
 }

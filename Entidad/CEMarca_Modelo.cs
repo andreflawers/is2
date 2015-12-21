@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class CEMarca
+    public class CEMarca_Modelo
     {
-        public int id_empresa{get;set;}
         public string cod_marca { get; set; }
-        public string txt_abrv { get; set; }
-        public string txt_desc { get; set; }
-
-        public CEMarca()
+        public string cod_modelo { get; set; }
+        public CEMarca_Modelo()
         {
+ 
         }
     }
 }

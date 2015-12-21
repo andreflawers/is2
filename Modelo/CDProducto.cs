@@ -15,7 +15,7 @@ namespace Modelo
                 using (SqlCommand cmd = new SqlCommand("usp_producto_detalle", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id_producto", SqlDbType.BigInt).Value = m_id_producto;
+                    cmd.Parameters.Add("@id_producto", SqlDbType.VarChar,3).Value = m_id_producto;
                     SqlDataReader dr_reesult = cmd.ExecuteReader();
                     if (dr_reesult.HasRows)
                     {
@@ -65,7 +65,7 @@ namespace Modelo
                 using (SqlCommand cmd = new SqlCommand("usp_producto_Update", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id_producto", SqlDbType.BigInt).Value = obj_prod.id_producto;
+                    cmd.Parameters.Add("@id_producto", SqlDbType.VarChar,3).Value = obj_prod.id_producto;
                     cmd.Parameters.Add("@cod_cate", SqlDbType.VarChar, 3).Value = obj_prod.cod_cate;
                     cmd.Parameters.Add("@cod_clase", SqlDbType.VarChar, 3).Value = obj_prod.cod_clase;
                     cmd.Parameters.Add("@cod_tipo", SqlDbType.VarChar, 4).Value = obj_prod.cod_tipo;
@@ -87,7 +87,7 @@ namespace Modelo
                 using (SqlCommand cmd = new SqlCommand("usp_producto_Delete", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id_producto", SqlDbType.BigInt).Value = m_id_producto;
+                    cmd.Parameters.Add("@id_producto", SqlDbType.VarChar,3).Value = m_id_producto;
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -96,28 +96,7 @@ namespace Modelo
                 throw ex;
             }
         }
-        public DataTable getProductoAll()
-        {
-
-            String procedure = "usp_producto_Listar";
-            try
-            {
-                SqlConnection oSqlConnection = new SqlConnection();
-                CDConnection oCDConnection = new CDConnection();
-                oSqlConnection = oCDConnection.openDB();
-                SqlCommand oSqlCommand = new SqlCommand(procedure, oSqlConnection);
-                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(oSqlCommand);
-                DataTable oDataTable = new DataTable();
-                oSqlDataAdapter.Fill(oDataTable);
-                return oDataTable;
-
-            }
-            catch (Exception e)
-            {
-                e.ToString();
-                return null;
-            }
-        }
+        
      
        public DataTable getProductolistar()
        {

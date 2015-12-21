@@ -232,6 +232,7 @@
     <Content Include="Pages\FomMarca.aspx" />
     <Content Include="Pages\FormCategoria.aspx" />
     <Content Include="Pages\FormClase.aspx" />
+    <Content Include="Pages\FormMarcaModelo.aspx" />
     <Content Include="Pages\FormModelo.aspx" />
     <Content Include="Pages\FormTipoProducto.aspx" />
     <Content Include="Pages\FormUnidad_Medida.aspx" />
@@ -373,6 +374,13 @@
     </Compile>
     <Compile Include="Pages\FormClase.aspx.designer.cs">
       <DependentUpon>FormClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormMarcaModelo.aspx.cs">
+      <DependentUpon>FormMarcaModelo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormMarcaModelo.aspx.designer.cs">
+      <DependentUpon>FormMarcaModelo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FormModelo.aspx.cs">
       <DependentUpon>FormModelo.aspx</DependentUpon>

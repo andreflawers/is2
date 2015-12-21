@@ -19,8 +19,29 @@
                     <asp:TextBox ID="txtbuscardescripcion"  PlaceHolder="Colocar la Descripcion" runat="server"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:GridView ID="grd_Producto" runat="server" CssClass="table table-bordered">
-                    </asp:GridView>
+                    <asp:GridView ID="grd_Producto" Width="100%" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" UseAccessibleHeader="true" GridLines="None" >
+                    <Columns>
+                        <asp:BoundField DataField="id_producto" HeaderText="ID Producto" />
+                        <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
+                        <asp:BoundField DataField="Clase" HeaderText="Clase" />
+                        <asp:BoundField DataField="Tipo_Producto" HeaderText="Tipo de Producto" />
+                        <asp:BoundField DataField="Marca" HeaderText="Marca" />
+                        <asp:BoundField DataField="Modelo" HeaderText="Modelo" />
+                        <asp:BoundField DataField="Unidad" HeaderText="Unidad" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lkb_editar" runat="server" CommandArgument='<%# Eval("id_producto") %>'>Editar</asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lkb_eliminar" runat="server" 
+                                    CommandArgument='<%# Eval("id_producto") %>' 
+                                     OnClientClick="return confirm('Esta seguro de eliminar el producto?')" OnClick="lkb_eliminar_Click" >Eliminar</asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
                     <br />
                     <asp:Label ID="lbl_mesg_01" runat="server" Text="Label" Visible="false"></asp:Label>
                 </div>
